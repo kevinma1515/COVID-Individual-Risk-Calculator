@@ -99,7 +99,7 @@ def communityRisk():
     # locate the county population and county active cases
     county_population = hf.iloc[hf_row, 3]
     print("The population of", county_name, "County is", county_population, "people.")
-    county_activeCases = df.iloc[df_row, 26]
+    county_activeCases = df.iloc[df_row, 26] # Instead of column 26, replace with last column. Need to fix brute forcing of last column
     print(county_name, "has", county_activeCases, "active cases.")
     # calculate the community risk
     communityRisk = int(county_activeCases)/int(county_population)
