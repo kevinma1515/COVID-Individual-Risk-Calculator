@@ -4,10 +4,7 @@ Created on Sat Jan  9 18:44:34 2021
 
 @author: kevin
 """
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.optimize import curve_fit
+
 def covidAge(age):
     # need a real age inputted for it to be valid
     # all data gathered from covid-Age calculator
@@ -136,10 +133,10 @@ def covidAge(age):
             
     # account for asthma as a symptom
     
-    asthma = input("Do you have asthma (please input Y/N)? ")
-    if asthma == "Y":
-        severityAsthma = input("Is your asthma severe? (Please enter Y/N)? ")
-        if severityAsthma == "Y":
+    asthma = input("Do you have asthma (please input Y/N)? ").lower()
+    if asthma == "y":
+        severityAsthma = input("Is your asthma severe? (Please enter Y/N)? ").lower()
+        if severityAsthma == "y":
             if age <= 25:
                 covidage += 15
             elif 26 <= age <= 32:
@@ -170,23 +167,145 @@ def covidAge(age):
                 covidage += 2
         else:
             covidage += 1
-
-
-def ageToProbAnalysis():
-    df = pd.read_csv('covid-age-calculator.csv')
-    df = df[2:]
-    x = df['covid_age'].to_numpy()
-    y = df['Point_estimate'].to_numpy()
+            
+    respiratoryDisease = input("Do you have any other chronic respiratory diseases? (Y/N) ").lower()
+    if respiratoryDisease == "y":
+        if age <= 24:
+            covidage += 17
+        elif 25 <= age <= 30:
+            covidage += 16
+        elif 31<=age<=35:
+            covidage += 15
+        elif 36 <= age <= 40:
+            covidage += 14
+        elif 41 <= age <= 46:
+            covidage += 13
+        elif 47 <= age <= 51:
+            covidage += 12
+        elif 52 <= age <= 55:
+            covidage += 11
+        elif 56 <= age <= 58:
+            covidage += 10
+        elif 59 <= age <= 61:
+            covidage += 9
+        elif 62 <= age <= 64:
+            covidage += 8
+        elif 65 <= age <= 69:
+            covidage += 7
+        elif age >= 70:
+            covidage += 6
+    else:
+        covidage += 0
     
-    print(curve_fit(lambda t,a,b: a*np.exp(b*t),  x,  y,p0=[21,0.04]))
-    plt.plot(x,y,'r')
-    ts = np.arange(20,85,1)
-    plt.plot(ts, 0.0091882*np.exp(0.10334731*ts),'g')
-    plt.xlabel('covid age')
-    plt.ylabel('point estimate of fatality ratio per 1000')
+    hypertension = input("Do you have hypertension? (Y/N) ").lower()
+    if hypertension == "y":
+        if age <= 26:
+            covidage += 12
+        elif 27 <= age <= 33:
+            covidage += 11
+        elif 34 <= age <= 39:
+            covidage += 10
+        elif 40 <= age <= 44:
+            covidage += 9
+        elif 45 <= age <= 49:
+            covidage += 8
+        elif 50 <= age <= 54:
+            covidage += 7
+        elif 55 <= age <= 57:
+            covidage += 6
+        elif 58 <= age <= 61:
+            covidage += 5
+        elif 62 <= age <= 64:
+            covidage += 4
+        elif 65 <= age <= 67:
+            covidage += 3
+        elif 68 <= age <= 70:
+            covidage += 2
+        elif 71 <= age <= 72:
+            covidage += 1
+        else:
+            covidage += 0
+    else:
+        covidage += 0
     
-    # Therefore, this proves that the best fit curve for an exponentail distribution of this
-    # curve is y = 0.0091882*exp(0.10334731*x) 
-    # where y = point estimate of the conversion from covid age to fatality ratio
-    # and x = covid age
+    heartFailure = input("Any heart failures or other chronic heart diseases? Write \
+                         ""heart failure or other or none""").lower()
+    if heartFailure == "heart failure":
+        if age <= 25:
+            covidage += 25
+        elif 24 <= age <= 30:
+            covidage += 24
+        elif 31 <= age <= 33:
+            covidage += 23
+        elif 34 <= age <= 37:
+            covidage += 22
+        elif 38 <= age <= 40:
+            covidage += 21
+        elif 41 <= age <= 43:
+            covidage += 20
+        elif 44 <= age <= 46:
+            covidage += 19
+        elif 47 <= age <= 49:
+            covidage += 18
+        elif 50 <= age <= 52:
+            covidage += 17
+        elif 53 <= age <= 55:
+            covidage += 16
+        elif 56 <= age <= 57:
+            covidage += 15
+        elif 58 <= age <= 59:
+            covidage += 14
+        elif 60 <= age <= 61:
+            covidage += 13
+        elif 62 <= age <= 63:
+            covidage += 12
+        elif 64 <= age <= 66:
+            covidage += 11
+        elif 67 <= age <= 69:
+            covidage += 10
+        elif 70 <= age <= 72:
+            covidage += 9
+        elif age >= 73:
+            covidage += 8
+    elif heartFailure == "other":
+        if age <= 25:
+            covidage += 20
+        elif 26 <= age <= 30:
+            covidage += 19
+        elif 31 <= age <= 33:
+            covidage += 18
+        elif 34 <= age <= 37:
+            covidage += 17
+        elif 38 <= age <= 40:
+            covidage += 16
+        elif 41 <= age <= 43:
+            covidage += 15
+        elif 44 <= age <= 46:
+            covidage += 14
+        elif 47 <= age <= 50:
+            covidage += 13
+        elif 51 <= age <= 54:
+            covidage += 12
+        elif 55 <= age <= 56:
+            covidage += 11
+        elif 57 <= age <= 58:
+            covidage += 10
+        elif 59 <= age <= 60:
+            covidage += 9
+        elif 61 <= age <= 62:
+            covidage += 8
+        elif 63 <= age <= 64:
+            covidage += 7
+        elif 65 <= age <= 66:
+            covidage += 6
+        elif 67 <= age <= 69:
+            covidage += 5
+        elif 70 <= age <= 72:
+            covidage += 4
+        elif age >= 73:
+            covidage += 3
+    else:
+        covidage += 0
+
+    return covidage
     
