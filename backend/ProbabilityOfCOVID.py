@@ -130,7 +130,8 @@ def communityRisk():
     
     return communityRisk
     
-
+def susceptiblityScore():
+    return symptomPredictionModel(age, sex, smellTasteSymptom, coughSymptoms, severeFatigues, skippedMeal)*communityRisk()
         
             
     
