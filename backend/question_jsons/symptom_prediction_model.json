@@ -6,29 +6,32 @@
         },
         {
             "name" : "Are you a male or female?",
-            "question_type" : "Multiple Chioce",
+            "question_type" : "dropdown",
             "choices" : ["Male", "Female"]
         },
         {
             "name" : "Did you experience any loss of smell and taste?",
-            "question_type" : "Multiple Chioce",
+            "question_type" : "dropdown",
             "choices" : ["Yes", "No"]
         },
         {
             "name" : "Do you have severe or significant persistant coughs?",
-            "question_type" : "Multiple Chioce",
+            "question_type" : "dropdown",
             "choices" : ["Yes", "No"]
         },
         {
             "name" : "Are you experiencing severe fatigue?",
-            "question_type" : "Multiple Chioce",
+            "question_type" : "dropdown",
             "choices" : ["Yes", "No"]
         },
         {
             "name" : "Have you skipped any meals recently?",
-            "question_type" : "Multiple Chioce",
+            "question_type" : "dropdown",
             "choices" : ["Yes", "No"]
-        }
-    ]
-
+        },
+        {
+            "name" : "Have you skipped any steps recently?",
+            "question_type" : "dropdown",
+            "choices" : ["one step", "No", "17"]
+        }]
 }

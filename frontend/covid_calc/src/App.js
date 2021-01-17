@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import Button from 'react-bootstrap/Button';
-import {Container, Row, Col} from 'react-bootstrap';
+import {Container, Row, Col, Dropdown} from 'react-bootstrap';
+import Input from './components/Input'
+import MultipleChoice from './components/MultipleChoice'
+import DropdownQuestion from './components/DropdownQuestion'
+import SymptomPredictionModel from './components/SymptomPredictionModel'
 function App() {
   return (
     <div className="App">
@@ -9,21 +13,13 @@ function App() {
        
         <Container>
           <Row>
-            tabs
-          </Row>
-          <Row>
             <Col>
-              hi
-            </Col>
+                <SymptomPredictionModel/>
+              </Col>
             <Col>
-              <Row>
-                Calc
-              </Row>
-              <Row>
-                Text
-              </Row>
             </Col>
           </Row>
+            
         </Container>
       </header>
     </div>
