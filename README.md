@@ -5,7 +5,7 @@ Calculate your individual risk of COVID based on your age, sex, ethnicity, sympt
 
 # Contributors
 ## Team
-- Kevin Ma - *product owner*
+- Kevin Ma - *author*
 - Timothy Gan - *full-stack developer*
 
 ## Advisor
