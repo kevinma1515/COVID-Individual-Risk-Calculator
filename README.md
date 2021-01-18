@@ -3,6 +3,9 @@ Calculate your individual risk of COVID based on your age, sex, ethnicity, sympt
 
 > Risk = ((Proportion of Community with Active Cases)(Symptom Probability)(Susceptibility))/(Normalization Factor) 
 
+Please note that the community risk is calculated from the CSV files from NYTimes
+Link here https://github.com/nytimes/covid-19-data
+
 # Contributors
 ## Team
 - Kevin Ma - *author*
