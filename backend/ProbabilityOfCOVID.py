@@ -81,24 +81,6 @@ def skippedMeals(skippedMeal):
 #     return np.exp(prediction_model)/(1+np.exp(prediction_model))
 
 def symptomPredictionModel(age, sex, smellTasteSymptom, coughSymptoms, severeFatigues, skippedMeal):
-    # age = float(input("How old are you? Please enter an integer only. "))
-    print(age)
-    # sex = str(input("Are you a male or female? Please answer specifically as ""male"" or ""female"". " )).lower()
-    print(sexFunction(sex))
-    
-    # smellTasteSymptom = str(input("Did you experience any loss of smell and taste? Please enter only yes or no as an answer. ")).lower()
-    print(smellTasteFunction(smellTasteSymptom))
-    
-    # coughSymptoms = str(input("Do you have severe or significant persistant coughs? Please enter only yes or no as an answer. ")).lower()
-    print(coughSymptom(coughSymptoms))
-    
-    # severeFatigues = str(input("Are you experiencing severe fatigue? Please enter only yes or no as an answer. ")).lower()
-    print(severeFatigue(severeFatigues))
-    
-    # skippedMeal = str(input("Have you skipped any meals recently? Please enter only yes or no as an answer. ")).lower()
-    print(skippedMeals(skippedMeal))
-    # this is the prediction model equation
-
     prediction_model = -1.32-(0.01*age)+(0.44*sexFunction(sex))+(1.75*smellTasteFunction(smellTasteSymptom))+(0.31*coughSymptom(coughSymptoms))+(0.45*severeFatigue(severeFatigues))+(0.39*skippedMeals(skippedMeal))
     
     # converts a probability value from a prediction model 

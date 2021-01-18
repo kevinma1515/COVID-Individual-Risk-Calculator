@@ -15,17 +15,12 @@ class SymptomPredictionModelView extends Component{
     }
 
     updateCovid(risk){
-        
         this.setState({covidRisk: (risk * 100).toFixed(2), color : ((1-risk)*120).toString(10)})
-        
     }
     
   
 
     render(){
-
-
-
         return (
             <Container>
                 <Row>
