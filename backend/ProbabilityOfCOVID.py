@@ -146,7 +146,7 @@ def communityRisk():
     
 # multiply proportion of community infected with symptom prediction model
 def totalSusceptibility():
-    return communityRisk()*symptomPredictionModel()
+    return communityRisk()*symptomPredictionModel(age, sex, smellTasteSymptom, coughSymptoms, severeFatigues, skippedMeal)
         
             
     
