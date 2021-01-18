@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Created on Thu Jan 14 17:02:45 2021
 
@@ -33,29 +32,29 @@ def ageToProbAnalysis():
     # and x = covid age
     
 
-def getProbabilityFatality(age):
-    
-    if covidAge(age) >= 85:
-        return 0.0091882*np.exp(0.10334731*85)/1000
-    else:
-        return 0.0091882*np.exp(0.10334731*covidAge(age))/1000
-    
-def getProbabilityHospitalized(age):
-    if covidAge(age) >= 85:
-        return 0.0091882*1.3*np.exp(0.10334731*85)/1000
-    else:
-        return 0.0091882*1.3*np.exp(0.10334731*covidAge(age))/1000
-    
-    
-def getProbabilityICU(age):
-    if covidAge(age) >= 85:
-        return 0.0091882*1.3*4*np.exp(0.10334731*85)/1000
-    elif covidAge(age) <= 18:
-        return 1/1000
-    else:
-        return 0.0091882*1.2*5.5*np.exp(0.10334731*covidAge(age))/1000
-    
 def conversionToRisk(age):
     
-    riskScore = totalSusceptibility()*(getProbabilityFatality(age)+getProbabilityHospitalized(age)+getProbabilityICU(age))/0.0002
+    covidAges = covidAge(age)
+    if covidAges >= 85:
+        probDeath = 0.0091882*np.exp(0.10334731*85)/1000
+    else:
+        probDeath = 0.0091882*np.exp(0.10334731*covidAges)/1000
+
+    if covidAges >= 85:
+        probICU = 0.0091882*1.3*np.exp(0.10334731*85)/1000
+    else:
+        probICU = 0.0091882*1.3*np.exp(0.10334731*covidAges)/1000
+
+    if covidAges >= 85:
+        probHosp = (0.0091882*1.3*4*np.exp(0.10334731*85)+10)/1000
+    elif covidAges <= 18:
+        probHosp = 1/1000
+    else:
+        probHosp = (0.0091882*1.2*5.5*np.exp(0.10334731*covidAges)+10)/1000
+    print('this is your prob death', probDeath)
+    print('this is your prob hosp', probHosp)
+    print("This is your prob ICU", probICU)
+    
+    riskScore = totalSusceptibility()*(probDeath + probHosp + probICU)/0.0000015
+    
     return riskScore
