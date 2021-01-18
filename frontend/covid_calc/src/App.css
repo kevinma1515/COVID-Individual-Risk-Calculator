@@ -40,3 +40,9 @@
 .scrollable{
   overflow: auto;
 }
+
+.covidRiskNumber{
+  text-align: center;
+  font-size: 60pt;
+  
+}

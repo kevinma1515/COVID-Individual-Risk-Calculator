@@ -6,7 +6,8 @@ class DropdownQuestion extends Component{
     constructor(props){
         super(props);
         this.state = {
-            value : this.props.choices[0]
+            value : this.props.choices[0],
+            name : this.props.name
         };
     }
 
@@ -20,6 +21,10 @@ class DropdownQuestion extends Component{
         this.setState({value : choice})
     }
 
+    change(event){
+        this.props.updateValue(this.state.name, event);
+    }
+
   
 
     render(){
@@ -27,11 +32,19 @@ class DropdownQuestion extends Component{
      
         return (
             <div>
-                {this.props.name}
-                <DropdownButton id="dropdown-basic-button" title={this.state.value} onSelect={this.changeName.bind(this)}>
-                    {this.props.choices.map((choice)=>{
+                {this.props.title}
+                <DropdownButton 
+                                id="dropdown-basic-button" 
+                                title={this.state.value} 
+                                onSelect={this.changeName.bind(this)}>
+                    {this.props.choices.map((choice, i)=>{
                         return(
-                            <Dropdown.Item as="button" eventKey={choice}>{choice}</Dropdown.Item>
+                            <Dropdown.Item  key={i}
+                                            as="button" 
+                                            eventKey={choice} 
+                                            onSelect={this.change.bind(this)}>
+                                {choice}
+                            </Dropdown.Item>
                         )
                     })}
                     

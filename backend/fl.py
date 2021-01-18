@@ -31,18 +31,20 @@ def symptom_prediction_model_questions():
             return make_response(data, 200)
 
 
-@app.route('/symptom_prediction_model', methods=['GET'])
+@app.route('/symptom_prediction_model_result', methods=['POST'])
 @cross_origin()
 def symptom_prediction_model():
-    if request.method == 'GET':
-        data = request.form
-        print(data)
+    if request.method == 'POST':
+        data = request.get_json()    
+        if len(data['age']) == 0:
+            data['age'] = 0
         result = ProbabilityOfCOVID.symptomPredictionModel(float(data['age']), 
                                                         data['sex'], 
                                                         data['smellTasteSymptom'],
                                                         data['coughSymptoms'],
                                                         data['severeFatigues'],
                                                         data['skippedMeal'])
+        print(result)
         return make_response(jsonify({"result" : result}), 200)
 
 

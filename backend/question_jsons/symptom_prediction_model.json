@@ -1,37 +1,44 @@
 {
     "questions" : 
         [{
-            "name" : "How old are you?",
+            "title" : "How old are you?",
+            "name" : "age",
+            "default" : 0,
             "question_type" : "input"
         },
         {
-            "name" : "Are you a male or female?",
+            "title" : "Are you a male or female?",
+            "name" : "sex",
+            "default" : "Male",
             "question_type" : "dropdown",
             "choices" : ["Male", "Female"]
         },
         {
-            "name" : "Did you experience any loss of smell and taste?",
+            "title" : "Did you experience any loss of smell and taste?",
+            "name" : "smellTasteSymptom",
+            "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["Yes", "No"]
+            "choices" : ["No", "Yes"]
         },
         {
-            "name" : "Do you have severe or significant persistant coughs?",
+            "title" : "Do you have severe or significant persistant coughs?",
+            "name" : "coughSymptoms",
+            "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["Yes", "No"]
+            "choices" : ["No", "Yes"]
         },
         {
-            "name" : "Are you experiencing severe fatigue?",
+            "title" : "Are you experiencing severe fatigue?",
+            "name" : "severeFatigues",
+            "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["Yes", "No"]
+            "choices" : ["No", "Yes"]
         },
         {
-            "name" : "Have you skipped any meals recently?",
+            "title" : "Have you skipped any meals recently?",
+            "name" : "skippedMeal",
+            "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["Yes", "No"]
-        },
-        {
-            "name" : "Have you skipped any steps recently?",
-            "question_type" : "dropdown",
-            "choices" : ["one step", "No", "17"]
+            "choices" : ["No", "Yes"]
         }]
 }

@@ -6,7 +6,8 @@ class Input extends Component{
     constructor(props){
         super(props);
         this.state = {
-            value : ''
+            value : '',
+            name : this.props.name
         };
     }
 
@@ -16,7 +17,16 @@ class Input extends Component{
 
     }
 
- 
+    change(event){
+        this.props.updateValue(this.state.name, event.target.value);
+    }
+
+    stopSubmit(event){
+        if (event.which === 13 /* Enter */) {
+          event.preventDefault();
+        }
+       
+    }
 
     render(){
         
@@ -24,9 +34,9 @@ class Input extends Component{
         return (
             <div style={{fontSize: "8pt"}}>
                 <Form>
-                    <Form.Group size="sm" controlId={this.props.name}>
-                        <Form.Label size="sm">{this.props.name}</Form.Label>
-                        <Form.Control type="text"/>
+                    <Form.Group size="sm" controlId={this.props.title}>
+                        <Form.Label  size="sm">{this.props.title}</Form.Label>
+                        <Form.Control onKeyPress={this.stopSubmit.bind(this)} as='input' onChange={this.change.bind(this)} type="text"/>
                     </Form.Group>
                 </Form>
             </div>

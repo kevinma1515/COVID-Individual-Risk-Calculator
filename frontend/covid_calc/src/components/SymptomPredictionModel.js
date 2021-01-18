@@ -9,7 +9,9 @@ class SymptomPredictionModel extends Component{
         super(props);
         this.state = {
             isLoading : true,
-            questionList: false
+            questionList: false,
+            values: {},
+            covidRisk: 0.0
         };
         
         fetch("http://localhost:5000/symptom_prediction_model_questions")
@@ -21,26 +23,54 @@ class SymptomPredictionModel extends Component{
         .then(
             (data) => {
                 console.log(data);
-                this.setState({questionList : data});
-                console.log(this.state.questionList);
-                console.log("ahdsfalsdflajsklj");
+                this.setState({questionList : data.questions});
+                let defaultValues = {}
+                data.questions.map((question) =>{
+                    defaultValues[question.name] = question.default;
+                    console.log(defaultValues)
+                })
+                this.setState({values : defaultValues})
                 return {}
             }
         )
         .then(
             (data) => {
-            console.log("alsdjflajsdkfjalsdjfajsdlfjlajsdfj");
-            this.setState({isLoading : false})}
+                this.setState({isLoading : false})
+            }
         )
         .catch(console.log);
     }
 
     
-
-    changeName(choice){
-        this.setState({value : choice})
+    updateValue(key, value){
+        let tempValues = this.state.values;
+        tempValues[key] = value;
+        this.setState({values: tempValues})
+        this.calculate();
     }
 
+    calculate(){
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(this.state.values)
+        }
+        console.log(requestOptions.body)
+        fetch("http://localhost:5000/symptom_prediction_model_result", requestOptions)
+        .then(
+            (response) => {
+                return response.json();
+            }
+        )
+        .then(
+            (data) => {
+                this.setState({covidRisk : data.result})
+                this.props.updateCovidValue(this.state.covidRisk)
+            }
+        )
+        .catch(console.log)
+    }
+    
   
 
     render(){
@@ -59,15 +89,22 @@ class SymptomPredictionModel extends Component{
                 <h2>
                     SymptomPredictionModel
                 </h2>
-                {this.state.questionList.questions.map(
-                    (question) => {
+                {this.state.questionList.map(
+                    (question, i) => {
                         if(question.question_type === 'dropdown'){
                             return (
-                                <DropdownQuestion name={question.name} choices={question.choices}/>
+                                <DropdownQuestion   key={i}
+                                                    updateValue={this.updateValue.bind(this)} 
+                                                    title={question.title} 
+                                                    choices={question.choices}
+                                                    name={question.name}/>
                             )
                         }
                         if(question.question_type === 'input'){
-                            return <Input name={question.name}/>
+                            return <Input   key={i}
+                                            title={question.title}
+                                            updateValue={this.updateValue.bind(this)}
+                                            name={question.name}/>
                         }
                     }
                 )}
