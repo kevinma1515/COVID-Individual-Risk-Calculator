@@ -109,29 +109,44 @@ def symptomPredictionModel(age, sex, smellTasteSymptom, coughSymptoms, severeFat
 # probable cases as updated appropriately with the DSHS
 # population projection updated with texas.gov
 def communityRisk():
-    df = pd.read_csv('TX_COVID19_Active_Cases.csv')
-    hf = pd.read_csv('2019_txpopest_county.csv')
+    df = pd.read_csv('us-counties.csv') # data collected from NYTimes github
+    hf = pd.read_csv('co-est2019-alldata.csv', encoding = "ISO-8859-1") # data collected from US census
     
-    del hf['FIPS']
-    del df['Notes']
+   
+    del df['date']
+    del hf['SUMLEV']
+    del hf['REGION']
+    del hf['DIVISION']
+    del hf['STATE']
     
+    
+    
+    state_name = str(input("What state do you live in? ")) 
     county_name = str(input("What county do you live in? "))
-    # finding the index of a specific county for both df and hf dataframes
-    df_row = df['County'].str.contains(county_name, na = False).idxmax()
-    hf_row = hf['county'].str.contains(county_name,na = False).idxmax()
+    df = df.sort_values(by = ['county', 'state'])
+    
+    # narrowing the rows to just the state and county desired
+    df_rowValue = df.loc[(df['state']== state_name) & (df['county'] == county_name)]
+    # find the row number of a specific county and state for census dataframe
+    hf_row = hf['Combined'].str.contains(state_name + county_name,na = False).idxmax()
+    # reverse the dataframe 
+    df_rowValue = df_rowValue[::-1]
     
     # locate the county population and county active cases
-    county_population = hf.iloc[hf_row, 3]
-    print("The population of", county_name, "County is", county_population, "people.")
-    county_activeCases = df.iloc[df_row, 26] # Instead of column 26, replace with last column. Need to fix brute forcing of last column
+    county_population = hf.iloc[hf_row, 14]
+    print("The population of", state_name + " " + county_name, "County is", county_population, "people.")
+    county_totalCasesToday = df_rowValue.iloc[0,3]
+    county_totalCasesTenDays = df_rowValue.iloc[10,3]
+    county_activeCases = county_totalCasesToday - county_totalCasesTenDays
     print(county_name, "has", county_activeCases, "active cases.")
     # calculate the community risk
     communityRisk = int(county_activeCases)/int(county_population)
     
     return communityRisk
     
-def susceptiblityScore():
-    return symptomPredictionModel(age, sex, smellTasteSymptom, coughSymptoms, severeFatigues, skippedMeal)*communityRisk()
+# multiply proportion of community infected with symptom prediction model
+def totalSusceptibility():
+    return communityRisk()*symptomPredictionModel()
         
             
     
