@@ -11,6 +11,7 @@ class SymptomPredictionModel extends Component{
             isLoading : true,
             questionList: false
         };
+        
         fetch("http://localhost:5000/symptom_prediction_model_questions")
         .then(
             (response) => {
