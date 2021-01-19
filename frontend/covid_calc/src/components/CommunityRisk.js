@@ -96,7 +96,7 @@ class CommunityRisk extends Component{
                                         title="Choose your county." 
                                         choices={this.state.data[this.state.currentState]}
                                         name="county"
-                                        reset={true}/>
+                                        start_value={this.state.data[this.state.currentState][0]}/>
 
             </div>
         )

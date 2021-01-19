@@ -36,7 +36,7 @@ class SymptomPredictionModelView extends Component{
 
     updateTotalRisk(){
         
-        this.setState({ totalRisk: this.state.symptomRisk * this.state.communityRisk / 1000, 
+        this.setState({ totalRisk: (this.state.symptomRisk * this.state.communityRisk / 1000).toFixed(3), 
                         totalRiskColor : ((1-(this.state.symptomRisk * this.state.communityRisk / 1000))*120).toString(10)})
     }
 
@@ -47,7 +47,7 @@ class SymptomPredictionModelView extends Component{
         return (
             <Container className="symptomPredView">
                 <Row>
-                    <Col style={{maxWidth : "50vw"}}>
+                    <Col style={{maxWidth : "45vw"}}>
                         <SymptomPredictionModel updateCovidValue={this.updateSymptom.bind(this)}/>
                         <CommunityRisk updateCovidValue={this.updateCommunity.bind(this)}/>
                     </Col>
@@ -60,7 +60,7 @@ class SymptomPredictionModelView extends Component{
                             Community Risk <br/>
                             {this.state.communityRisk}%
                         </div>
-                        <div className="symptomRiskNumber" style={{color : ["hsl(",this.state.totalColor,",100%,50%)"].join("")}}>
+                        <div className="symptomRiskNumber" style={{color : ["hsl(",this.state.totalRiskColor,",100%,50%)"].join("")}}>
                             Total Risk <br/>
                             {this.state.totalRisk}%
                         </div>

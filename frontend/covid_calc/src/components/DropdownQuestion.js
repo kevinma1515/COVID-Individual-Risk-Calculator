@@ -9,6 +9,7 @@ class DropdownQuestion extends Component{
             value: this.props.choices[0],
             name : this.props.name,
             isLoading: true,
+            tempChoices : this.props.choices
             
         };
         
@@ -31,8 +32,9 @@ class DropdownQuestion extends Component{
 
     render(){
         
-        if(this.props.reset != undefined && this.props.reset === true){
+        if(JSON.stringify(this.props.choices)!=JSON.stringify(this.state.tempChoices)){
             this.state.value = this.props.choices[0]
+            this.state.tempChoices = this.props.choices
         }
         
 
