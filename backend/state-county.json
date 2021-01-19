@@ -1,0 +1,8 @@
+{
+    "states" : ["Alabama", "Arkansas"],
+    "Alabama" : ["county, county"],
+    ...
+}
+
+"states" is a list of all the states in alpha order,
+after is each state that is a list of their counties, same naming scheme as csv
