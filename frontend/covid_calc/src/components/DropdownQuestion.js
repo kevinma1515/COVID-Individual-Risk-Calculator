@@ -6,16 +6,18 @@ class DropdownQuestion extends Component{
     constructor(props){
         super(props);
         this.state = {
-            value : this.props.choices[0],
-            name : this.props.name
+            value: this.props.choices[0],
+            name : this.props.name,
+            isLoading: true,
+            
         };
+        
+
+        
     }
 
     
-    componentDidMount(){
-       
-
-    }
+    
 
     changeName(choice){
         this.setState({value : choice})
@@ -28,8 +30,12 @@ class DropdownQuestion extends Component{
   
 
     render(){
+        
+        if(this.props.reset != undefined && this.props.reset === true){
+            this.state.value = this.props.choices[0]
+        }
+        
 
-     
         return (
             <div>
                 {this.props.title}

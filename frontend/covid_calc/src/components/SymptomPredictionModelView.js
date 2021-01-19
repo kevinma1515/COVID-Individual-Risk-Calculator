@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
 import SymptomPredictionModel from './SymptomPredictionModel';
+import CommunityRisk from './CommunityRisk';
 import '../App.css'
 
 
@@ -8,28 +9,60 @@ class SymptomPredictionModelView extends Component{
     constructor(props){
         super(props);
         this.state = {
-            covidRisk: 0.0,
-            color : 'white'
+            symptomRisk: 0.00,
+            communityRisk: 0.00,
+            symptomColor : 'white',
+            communityColor : 'white',
+            totalRisk : 0.00,
+            totalRiskColor : 'white'
         };
         
     }
 
-    updateCovid(risk){
-        this.setState({covidRisk: (risk * 100).toFixed(2), color : ((1-risk)*120).toString(10)})
+    updateSymptom(risk){
+        this.setState({symptomRisk: (risk * 100).toFixed(2), symptomColor : ((1-risk)*120).toString(10)}, () => {
+            this.updateTotalRisk()
+            console.log(this.state.symptomColor)
+        })
     }
+
+    updateCommunity(risk){
+        console.log(risk)
+        this.setState({communityRisk: (risk * 100).toFixed(2), communityColor : ((1-risk)*120).toString(10)}, () => {
+            this.updateTotalRisk()
+            console.log(this.state.communityColor)
+        })
+    }
+
+    updateTotalRisk(){
+        
+        this.setState({ totalRisk: this.state.symptomRisk * this.state.communityRisk / 1000, 
+                        totalRiskColor : ((1-(this.state.symptomRisk * this.state.communityRisk / 1000))*120).toString(10)})
+    }
+
     
   
 
     render(){
         return (
-            <Container>
+            <Container className="symptomPredView">
                 <Row>
-                    <Col>
-                        <SymptomPredictionModel updateCovidValue={this.updateCovid.bind(this)}/>
+                    <Col style={{maxWidth : "50vw"}}>
+                        <SymptomPredictionModel updateCovidValue={this.updateSymptom.bind(this)}/>
+                        <CommunityRisk updateCovidValue={this.updateCommunity.bind(this)}/>
                     </Col>
                     <Col>
-                        <div className="covidRiskNumber" style={{color : ["hsl(",this.state.color,",100%,50%)"].join("")}}>
-                            {this.state.covidRisk}%
+                        <div className="symptomRiskNumber" style={{color : ["hsl(",this.state.symptomColor,",100%,50%)"].join("")}}>
+                            Symptom Risk <br/>
+                            {this.state.symptomRisk}%
+                        </div>
+                        <div className="symptomRiskNumber" style={{color : ["hsl(",this.state.communityColor,",100%,50%)"].join("")}}>
+                            Community Risk <br/>
+                            {this.state.communityRisk}%
+                        </div>
+                        <div className="symptomRiskNumber" style={{color : ["hsl(",this.state.totalColor,",100%,50%)"].join("")}}>
+                            Total Risk <br/>
+                            {this.state.totalRisk}%
                         </div>
                     </Col>
                 </Row>

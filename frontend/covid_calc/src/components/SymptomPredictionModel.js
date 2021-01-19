@@ -55,7 +55,7 @@ class SymptomPredictionModel extends Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(this.state.values)
         }
-        console.log(requestOptions.body)
+        
         fetch("http://localhost:5000/symptom_prediction_model_result", requestOptions)
         .then(
             (response) => {
@@ -101,10 +101,12 @@ class SymptomPredictionModel extends Component{
                             )
                         }
                         if(question.question_type === 'input'){
-                            return <Input   key={i}
-                                            title={question.title}
-                                            updateValue={this.updateValue.bind(this)}
-                                            name={question.name}/>
+                            return (
+                                <Input              key={i}
+                                                    title={question.title}
+                                                    updateValue={this.updateValue.bind(this)}
+                                                    name={question.name}/>
+                            )
                         }
                     }
                 )}

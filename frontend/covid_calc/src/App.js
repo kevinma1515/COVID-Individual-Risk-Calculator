@@ -17,6 +17,9 @@ function App() {
 					</Row>
 				</Container>
 			</header>
+			<footer className="App-footer">
+
+			</footer>
 		</div>
 	);
 }
