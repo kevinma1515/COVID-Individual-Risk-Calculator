@@ -1,6 +1,20 @@
 {
-    "states" : ["Alabama", "Arkansas"],
-    "Alabama" : ["county, county"],
+    "states" : ["Alabama","Alaska","Arizona","Arkansas","California","Colorado",
+  "Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois",
+  "Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland",
+  "Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana",
+  "Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York",
+  "North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania",
+  "Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah",
+  "Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],
+    
+    "Alabama" : ["Autauga, Baldwin, Barbour, Bibb, Blount, Bullock, Butler, Calhoun, Chambers, Cherokee, Chilton, Choctaw, Clarke, Clay, Cleburne, Coffee, Colbert, Conecuh, Coosa, Covington, Crenshaw, Cullman, Dale, Dallas, DeKalb, Elmore, Escambia, Etowah, Fayette, Franklin, Geneva, Greene, Hale, Henry, Houston, Jackson, Jefferson, Lamar, Lauderdale, Lawrence, Lee, Limestone, Lowndes, Macon, Madison, Marengo, Marion, Marshall, Mobile, Monroe, Montgomery, Morgan, Perry, Pickens, Pike, Randolph, Russell, St.,Clair, Shelby, Sumter, Talladega, Tallapoosa, Tuscaloosa, Walker, Washington, Wilcox, Winston,"],
+    "Alaska" : [" Aleutians East Borough, Aleutians West Census Area, Anchorage Municipality, Bethel Census Area, Bristol Bay Borough, Denali Borough, Dillingham Census Area, Fairbanks North Star Borough, Haines Borough, Hoonah-Angoon Census Area, Juneau City and Borough, Kenai Peninsula Borough, Ketchikan Gateway Borough, Kodiak Island Borough, Kusilvak Census Area, Lake and Peninsula Borough, Matanuska-Susitna Borough, Nome Census Area, North Slope Borough, Northwest Arctic Borough, Petersburg Borough, Prince of Wales-Hyder Census Area, Sitka City and Borough, Skagway Municipality, Southeast Fairbanks Census Area, Valdez-Cordova Census Area, Wrangell City and Borough, Yakutat City and Borough, Yukon-Koyukuk Census Area"],
+    "Arizona" : ["Apache, Cochise, Coconino, Gila, Graham, Greenlee, La Paz, Maricopa, Mohave, Navajo, Pima, Pinal, Santa,Cruz, Yavapai, Yuma,"],
+    "Arkansas" : ["Arkansas, Ashley, Baxter, Benton, Boone, Bradley, Calhoun, Carroll, Chicot, Clark, Clay, Cleburne, Cleveland, Columbia, Conway, Craighead, Crawford, Crittenden, Cross, Dallas, Desha, Drew, Faulkner, Franklin, Fulton, Garland, Grant, Greene, Hempstead, Hot,Spring, Howard, Independence, Izard, Jackson, Jefferson, Johnson, Lafayette, Lawrence, Lee, Lincoln, Little,River, Logan, Lonoke, Madison, Marion, Miller, Mississippi, Monroe, Montgomery, Nevada, Newton, Ouachita, Perry, Phillips, Pike, Poinsett, Polk, Pope, Prairie, Pulaski, Randolph, St. Francis, Saline, Scott, Searcy, Sebastian, Sevier, Sharp, Stone, Union, Van Buren, Washington, White, Woodruff, Yell"],
+    "California" : [""]
+  
+    
     ...
 }
 
