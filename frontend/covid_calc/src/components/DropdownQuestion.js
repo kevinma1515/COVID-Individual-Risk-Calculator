@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {DropdownButton, Dropdown, Tab, Tabs, Form} from 'react-bootstrap';
-
+import '../styles/Dropdown.css'
 
 class DropdownQuestion extends Component{
     constructor(props){
@@ -45,6 +45,7 @@ class DropdownQuestion extends Component{
                                 id="dropdown-basic-button" 
                                 title={this.state.value} 
                                 onSelect={this.changeName.bind(this)}>
+                    <div className='dropdown-div'>
                     {this.props.choices.map((choice, i)=>{
                         return(
                             <Dropdown.Item  key={i}
@@ -55,6 +56,7 @@ class DropdownQuestion extends Component{
                             </Dropdown.Item>
                         )
                     })}
+                    </div>
                     
                 </DropdownButton>
             </div>
