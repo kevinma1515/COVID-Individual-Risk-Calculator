@@ -228,8 +228,7 @@ def covidAge(age):
     else:
         covidage += 0
     
-    heartFailure = input("Any heart failures or other chronic heart diseases? Write \
-                         ""heart failure or other or none""").lower()
+    heartFailure = input("Any heart failures or other chronic heart diseases? Write ""heart failure or other or none""").lower()
     if heartFailure == "heart failure":
         if age <= 25:
             covidage += 25
@@ -306,6 +305,401 @@ def covidAge(age):
             covidage += 3
     else:
         covidage += 0
-
-    return covidage
     
+    type1Diabetes = input("Do you have type 1 diabetes? (Y/N) ").lower()
+    
+    if type1Diabetes == "y":
+        if age <= 24:
+            covidage += 29
+        elif 25 <= age <= 32:
+            covidage += 28
+
+        elif 33 <= age <= 37:
+            covidage += 27
+        elif 38 <= age <= 41:
+            covidage += 26
+        elif 42 <= age <= 45:
+            covidage += 25
+        elif 46 <= age <= 48:
+            covidage += 24
+        elif 49 <= age <= 51:
+            covidage += 23
+        elif 52 <= age <= 53:
+            covidage += 22
+        elif 54 <= age <= 55:
+            covidage += 21
+        elif 56 <= age <= 57:
+            covidage += 20
+        elif 58 <= age <= 59:
+            covidage += 19
+        elif 60 <= age <= 61:
+            covidage += 18
+        elif 62 <= age <= 63:
+            covidage += 17
+        elif 64 <= age <= 65:
+            covidage += 16
+        elif 66 <= age <= 67:
+            covidage += 15
+        elif 68 <= age <= 70:
+            covidage += 14
+        elif 71 <= age <= 72:
+            covidage += 13
+        elif age >= 73:
+            covidage += 12
+    else:
+        covidage += 0
+    
+    type2Diabetes = input("Do you have type 2 diabetes? (Y/N) ").lower()
+    
+    if type2Diabetes == 'y':
+        if age <= 24:
+            covidage += 22
+        elif 25 <= age <= 37:
+            covidage += 21
+        elif 38 <= age <= 45:
+            covidage += 20
+        elif 46 <= age <= 48:
+            covidage += 19
+        elif 49 <= age <= 51:
+            covidage += 18
+        elif 52 <= age <= 53:
+            covidage += 17
+        elif 54 <= age <= 56:
+            covidage += 16
+        elif 57 <= age <= 58:
+            covidage += 15
+        elif 59 <= age <= 60:
+            covidage += 14
+        elif 61 <= age <= 62:
+            covidage += 13
+        elif 63 <= age <= 64:
+            covidage += 12
+        elif 65 <= age <= 67:
+            covidage += 11
+        elif 68 <= age <= 69:
+            covidage += 10
+        elif 70 <= age <= 72:
+            covidage += 9
+        elif age >= 73:
+            covidage += 8
+    else:
+        covidage += 0
+        
+    chronicKidneyDisease = input("Do you have chronic kidney disease? (Y/N) ").lower()
+    
+    if chronicKidneyDisease == 'y':
+        GFR3060 = input("Is your estimated GFR 30-60 mL/min?(Y/N) ").lower()
+        # note else means that it is lower than 30 mL/min
+        if GFR3060 == 'y':
+            if age == 20:
+                covidage += 42
+            elif age == 21:
+                covidage += 41
+            elif age == 22:
+                covidage += 40
+            elif age == 23:
+                covidage += 39
+            elif age == 24:
+                covidage += 38
+            elif 25 <= age <= 26:
+                covidage += 37
+            elif age == 27:
+                covidage += 36
+            elif age == 28:
+                covidage += 35
+            elif age == 29:
+                covidage += 34
+            elif age == 30:
+                covidage += 33
+            elif 31 <= age <= 32:
+                covidage += 32
+            elif age == 33:
+                covidage += 31
+            elif age == 34:
+                covidage += 30
+            elif age == 35:
+                covidage += 29
+            elif age == 36:
+                covidage += 28
+            elif age == 37:
+                covidage += 27
+            elif 38 <= age <= 39:
+                covidage += 26
+            elif age == 40:
+                covidage += 25
+            elif age == 41:
+                covidage += 24
+            elif age == 42:
+                covidage += 23
+            elif age == 43:
+                covidage += 22
+            elif age == 44:
+                covidage += 21
+            elif age == 45:
+                covidage += 20
+            elif 46 <= age <= 47:
+                covidage += 19
+            elif 48 <= age <= 49:
+                covidage += 18
+            elif age == 50:
+                covidage += 17
+            elif 51 <= age <= 52:
+                covidage += 16
+            elif age == 53:
+                covidage += 15
+            elif 54 <= age <= 55:
+                covidage += 14
+            elif 56 <= age <=57:
+                covidage += 13
+            elif age == 58:
+                covidage += 12
+            elif 59 <= age <= 60:
+                covidage += 11
+            elif age == 61:
+                covidage += 10
+            elif 62 <= age <= 63:
+                covidage += 9
+            elif 64 <= age <= 65:
+                covidage += 8
+            elif 66 <= age <= 67:
+                covidage += 7
+            elif 68 <= age <= 69:
+                covidage += 6
+            elif 70 <= age <= 71:
+                covidage += 5
+            elif 72 <= age <= 73:
+                covidage += 4
+            elif age >= 74:
+                covidage += 3
+        else:
+            if age == 20:
+                covidage += 53
+            elif age == 21:
+                covidage += 52
+            elif age == 22:
+                covidage += 51 
+            elif 23 <= age <= 24:
+                covidage += 50
+            elif age == 25:
+                covidage += 49
+            elif age == 26:
+                covidage += 48
+            elif age == 27:
+                covidage += 47
+            elif age == 28:
+                covidage += 46
+            elif age == 29:
+                covidage += 46
+            elif age == 30:
+                covidage += 45
+            elif age == 31:
+                covidage += 44
+            elif age == 32:
+                covidage += 44
+            elif age == 33:
+                covidage += 43
+            elif age == 34:
+                covidage += 42
+            elif age == 35:
+                covidage += 41
+            elif age == 36:
+                covidage += 40
+            elif age == 37:
+                covidage += 39
+            elif age == 38:
+                covidage += 38
+            elif age == 39:
+                covidage += 37
+            elif age == 40:
+                covidage += 36
+            elif age == 41:
+                covidage += 35
+            elif age == 42:
+                covidage += 35
+            elif age == 43:
+                covidage += 34
+            elif age == 44:
+                covidage += 33
+            elif age == 45:
+                covidage += 33
+            elif age == 46:
+                covidage += 32
+            elif age == 47:
+                covidage += 32
+            elif age == 48:
+                covidage += 31
+            elif age == 49:
+                covidage += 30
+            elif age == 50:
+                covidage += 30
+            elif age == 51:
+                covidage += 29
+            elif age == 52:
+                covidage += 28
+            elif age == 53:
+                covidage += 28
+            elif age == 54:
+                covidage += 27
+            elif age == 55:
+                covidage += 26
+            elif age == 56:
+                covidage += 26
+            elif age == 57:
+                covidage += 25
+            elif age == 58:
+                covidage += 24
+            elif age == 59:
+                covidage += 23
+            elif age == 60:
+                covidage += 23
+            elif age == 61:
+                covidage += 22
+            elif age == 62:
+                covidage += 22
+            elif age == 63:
+                covidage += 21
+            elif age == 64:
+                covidage += 20
+            elif age == 65:
+                covidage += 20
+            elif age == 66:
+                covidage += 19
+            elif age == 67:
+                covidage += 19
+            elif age == 68:
+                covidage += 18
+            elif age == 69:
+                covidage += 18
+            elif age == 70:
+                covidage += 17
+            elif age == 71:
+                covidage += 17
+            elif age == 72:
+                covidage += 16
+            elif age == 73:
+                covidage += 16
+            elif age >= 74:
+                covidage += 15
+                
+        
+    else:
+        covidage += 0
+        
+        
+    kidneyDisease = input("Do you have kidney disease? (Y/N) ").lower()
+    if kidneyDisease == 'y':
+        
+        if age == 20:
+            covidage += 32
+        elif age == 21:
+            covidage += 31
+        elif age == 22:
+            covidage += 31 
+        elif 23 <= age <= 24:
+            covidage += 30
+        elif age == 25:
+            covidage += 29
+        elif age == 26:
+            covidage += 29
+        elif age == 27:
+            covidage += 28
+        elif age == 28:
+            covidage += 28
+        elif age == 29:
+            covidage += 27
+        elif age == 30:
+            covidage += 27
+        elif age == 31:
+            covidage += 26
+        elif age == 32:
+            covidage += 26
+        elif age == 33:
+            covidage += 25
+        elif age == 34:
+            covidage += 25
+        elif age == 35:
+            covidage += 24
+        elif age == 36:
+            covidage += 24
+        elif age == 37:
+            covidage += 23
+        elif age == 38:
+            covidage += 23
+        elif age == 39:
+            covidage += 22
+        elif age == 40:
+            covidage += 22
+        elif age == 41:
+            covidage += 21
+        elif age == 42:
+            covidage += 21
+        elif age == 43:
+            covidage += 20
+        elif age == 44:
+            covidage += 20
+        elif age == 45:
+            covidage += 19
+        elif age == 46:
+            covidage += 19
+        elif age == 47:
+            covidage += 18
+        elif age == 48:
+            covidage += 17
+        elif age == 49:
+            covidage += 17
+        elif age == 50:
+            covidage += 16
+        elif age == 51:
+            covidage += 15
+        elif age == 52:
+            covidage += 15
+        elif age == 53:
+            covidage += 14
+        elif age == 54:
+            covidage += 14
+        elif age == 55:
+            covidage += 13
+        elif age == 56:
+            covidage += 13
+        elif age == 57:
+            covidage += 12
+        elif age == 58:
+            covidage += 12
+        elif age == 59:
+            covidage += 11
+        elif age == 60:
+            covidage += 11
+        elif age == 61:
+            covidage += 10
+        elif age == 62:
+            covidage += 10
+        elif age == 63:
+            covidage += 9
+        elif age == 64:
+            covidage +=9
+        elif age == 65:
+            covidage += 8
+        elif age == 66:
+            covidage += 8
+        elif age == 67:
+            covidage += 7
+        elif age == 68:
+            covidage += 6
+        elif age == 69:
+            covidage += 6
+        elif age == 70:
+            covidage += 5
+        elif age == 71:
+            covidage += 5
+        elif age == 72:
+            covidage += 4
+        elif age == 73:
+            covidage += 4
+        elif age >= 74:
+            covidage += 3
+    else:
+        covidage += 0
+    
+        
+        
+    return covidage
