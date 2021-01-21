@@ -18,11 +18,13 @@ def ageToProbAnalysis():
     y = df['Point_estimate'].to_numpy()
     
     print(curve_fit(lambda t,a,b: a*np.exp(b*t),  x,  y,p0=[21,0.04]))
-    plt.plot(x,y,'r')
+    
+    plt.plot(x,y,'y')
     ts = np.arange(20,85,1)
     plt.plot(ts, 0.0091882*np.exp(0.10334731*ts),'g')
-    plt.plot(ts,0.0091882*1.3*np.exp(0.10334731*ts), 'r')
-    plt.plot(ts,0.0091882*1.3*4*np.exp(0.10334731*ts)+10, 'r')
+    # plt.plot(ts,0.0091882*1.3*np.exp(0.10334731*ts), 'or')
+    # plt.plot(ts,0.0091882*1.3*4*np.exp(0.10334731*ts)+10, 'b')
+    # plt.yscale("log")
     plt.xlabel('covid age')
     plt.ylabel('point estimate of fatality ratio per 1000')
     
@@ -31,6 +33,11 @@ def ageToProbAnalysis():
     # where y = point estimate of the conversion from covid age to fatality ratio
     # and x = covid age
     
+    # from excel sheet, prob of hospitalization is 0.009exp(0.0679*x)
+    # note that P(Hosp)*P(ICU|Hosp) = P(ICU) due to P(Hosp|ICU) = 1
+    # so P(ICU) = 0.0001*exp(0.0784*x)
+    # In literature P(ICU) is lower for elderlies since their chances of surviving in an ICU
+    # is lower therefore the P(ICU) for them is lower
 
 def conversionToRisk(age):
     
@@ -40,21 +47,23 @@ def conversionToRisk(age):
     else:
         probDeath = 0.0091882*np.exp(0.10334731*covidAges)/1000
 
-    if covidAges >= 85:
-        probICU = 0.0091882*1.3*np.exp(0.10334731*85)/1000
+    if covidAges >= 80:
+        probICU = 0.0256
+    elif 70 >= covidAges >= 79:
+        probICU = 0.0332
     else:
-        probICU = 0.0091882*1.3*np.exp(0.10334731*covidAges)/1000
+        probICU = 0.0001*np.exp(0.0784*covidAges)
 
     if covidAges >= 85:
-        probHosp = (0.0091882*1.3*4*np.exp(0.10334731*85)+10)/1000
-    elif covidAges <= 18:
-        probHosp = 1/1000
+        probHosp = 0.009*np.exp(0.0679*85)
     else:
-        probHosp = (0.0091882*1.2*5.5*np.exp(0.10334731*covidAges)+10)/1000
+        probHosp = 0.009*np.exp(0.0679*covidAges)
     print('this is your prob death', probDeath)
     print('this is your prob hosp', probHosp)
     print("This is your prob ICU", probICU)
     
     riskScore = totalSusceptibility()*(probDeath + probHosp + probICU)/0.0000015
-    
-    return riskScore
+    if riskScore >= 100:
+        return 100
+    else:
+        return riskScore
