@@ -586,8 +586,8 @@ def covidAge(age):
         covidage += 0
         
         
-    kidneyDisease = input("Do you have kidney disease? (Y/N) ").lower()
-    if kidneyDisease == 'y':
+    liverDisease = input("Do you have liver disease? (Y/N) ").lower()
+    if liverDisease == 'y':
         
         if age == 20:
             covidage += 32
