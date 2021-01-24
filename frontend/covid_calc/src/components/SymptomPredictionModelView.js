@@ -37,7 +37,12 @@ class SymptomPredictionModelView extends Component{
     updateTotalRisk(){
         
         this.setState({ totalRisk: (this.state.symptomRisk * this.state.communityRisk / 1000).toFixed(3), 
-                        totalRiskColor : ((1-(this.state.symptomRisk * this.state.communityRisk / 1000))*120).toString(10)})
+                        totalRiskColor : ((1-(this.state.symptomRisk * this.state.communityRisk / 1000))*120).toString(10)},
+                        () => {
+                            console.log(this.state.symptomRisk * this.state.communityRisk/1000)
+                           this.props.updateRisk(this.state.symptomRisk * this.state.communityRisk/1000)
+                        })
+    
     }
 
     

@@ -6,15 +6,15 @@ import Input from './components/Input'
 import MultipleChoice from './components/MultipleChoice'
 import DropdownQuestion from './components/DropdownQuestion'
 import SymptomPredictionModelView from './components/SymptomPredictionModelView'
+import COVID_AGE_VIEW from './components/COVID_Age_View';
+import MasterView from './components/MasterView';
 function App() {
 	return (
 		<div className="App">
 			<header className="App-header">
 
 				<Container>
-					<Row>
-						<SymptomPredictionModelView/>
-					</Row>
+					<MasterView></MasterView>
 				</Container>
 			</header>
 			<footer className="App-footer">
