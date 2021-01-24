@@ -16,7 +16,7 @@
         {
             "title" : "Are you White, Asian, Black, Hispanic, or other non-White?",
             "name" : "race",
-            "default" : "",
+            "default" : "White",
             "question_type" : "dropdown",
             "choices" : ["White", "Asian", "Black", "Hispanic","Other"]
         },

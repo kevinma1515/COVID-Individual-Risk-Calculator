@@ -54,7 +54,7 @@ class COVID_AGE_VIEW extends Component{
                         </div>
                         <div className="symptomRiskNumber" >
                             Risk Score <br/>
-                            {this.state.score}%
+                            {this.state.score}
                         </div>
                         
                     </Col>

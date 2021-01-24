@@ -53,15 +53,16 @@ def conversionToRisk(covidAges, totalSusceptibility):
         probICU = 0.0001*np.exp(0.0784*covidAges)
 
     if covidAges >= 85:
-        probHosp = 0.009*np.exp(0.0679*85)
+        probHosp = 0.0009*np.exp(0.0679*85)
     else:
-        probHosp = 0.009*np.exp(0.0679*covidAges)
-    # print('this is your prob death', probDeath)
-    # print('this is your prob hosp', probHosp)
-    # print("This is your prob ICU", probICU)
-    print("comm risk", totalSusceptibility)
+        probHosp = 0.0009*np.exp(0.0679*covidAges)
+    
+    print("community risk: ", totalSusceptibility)
+    print("probability of death: ", probDeath)
+    print("probability of hospitlization: ", probHosp)
+    print("probability of icu: ", probICU)
     riskScore = totalSusceptibility*(probDeath + probHosp + probICU)/0.0000015
-    print(riskScore)
+    print("risk score: ", riskScore)
     if riskScore >= 100:
         riskScore = 100
     return {
