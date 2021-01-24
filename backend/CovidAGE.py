@@ -5,34 +5,38 @@ Created on Sat Jan  9 18:44:34 2021
 @author: kevin
 """
 
-def covidAge(age):
+
+
+
+def covidAge(age, gender, race, bmi, asthma, severityAsthma, respiratoryDisease, hypertension, heartFailure, type1Diabetes,
+            type2Diabetes, chronicKidneyDisease, GFR3060, liverDisease):
     # need a real age inputted for it to be valid
     # all data gathered from covid-Age calculator
     
     covidage = 0
     covidage += age
-    gender = input("Are you male or female? ").lower()
-    if gender == "female":
+    # gender = input("Are you male or female? ").lower()
+    if gender == "Female":
         covidage = covidage - 5
     else:
         covidage += 0
     # ethnicity factor
-    race = input("Are you White, Asian, Black, Hispanic, or other non-White? ").lower()
+    # race = input("Are you White, Asian, Black, Hispanic, or other non-White? ").lower()
     
-    if race == "white":
+    if race == "White":
         covidage += 0
-    elif race == "asian":
+    elif race == "Asian":
         covidage += 5
-    elif race == "black":
+    elif race == "Black":
         covidage += 7
-    elif race == "hispanic":
+    elif race == "Hispanic":
         covidage += 6
     else:
         covidage += 4
         
     # account for BMI
     
-    bmi = int(input("What is your Body Mass Index (round down please)? "))
+    # bmi = int(input("What is your Body Mass Index (round down please)? "))
     
     if bmi < 30:
         covidage += 0
@@ -133,10 +137,10 @@ def covidAge(age):
             
     # account for asthma as a symptom
     
-    asthma = input("Do you have asthma (please input Y/N)? ").lower()
-    if asthma == "y":
-        severityAsthma = input("Is your asthma severe? (Please enter Y/N)? ").lower()
-        if severityAsthma == "y":
+    # asthma = input("Do you have asthma (please input Y/N)? ").lower()
+    if asthma == "Yes":
+        # severityAsthma = input("Is your asthma severe? (Please enter Y/N)? ").lower()
+        if severityAsthma == "Yes":
             if age <= 25:
                 covidage += 15
             elif 26 <= age <= 32:
@@ -168,8 +172,8 @@ def covidAge(age):
         else:
             covidage += 1
             
-    respiratoryDisease = input("Do you have any other chronic respiratory diseases? (Y/N) ").lower()
-    if respiratoryDisease == "y":
+    # respiratoryDisease = input("Do you have any other chronic respiratory diseases? (Y/N) ").lower()
+    if respiratoryDisease == "Yes":
         if age <= 24:
             covidage += 17
         elif 25 <= age <= 30:
@@ -197,8 +201,8 @@ def covidAge(age):
     else:
         covidage += 0
     
-    hypertension = input("Do you have hypertension? (Y/N) ").lower()
-    if hypertension == "y":
+    # hypertension = input("Do you have hypertension? (Y/N) ").lower()
+    if hypertension == "Yes":
         if age <= 26:
             covidage += 12
         elif 27 <= age <= 33:
@@ -228,8 +232,8 @@ def covidAge(age):
     else:
         covidage += 0
     
-    heartFailure = input("Any heart failures or other chronic heart diseases? Write ""heart failure or other or none""").lower()
-    if heartFailure == "heart failure":
+    # heartFailure = input("Any heart failures or other chronic heart diseases? Write ""heart failure or other or none""").lower()
+    if heartFailure == "Heart Failure":
         if age <= 25:
             covidage += 25
         elif 24 <= age <= 30:
@@ -266,7 +270,7 @@ def covidAge(age):
             covidage += 9
         elif age >= 73:
             covidage += 8
-    elif heartFailure == "other":
+    elif heartFailure == "Other":
         if age <= 25:
             covidage += 20
         elif 26 <= age <= 30:
@@ -306,9 +310,9 @@ def covidAge(age):
     else:
         covidage += 0
     
-    type1Diabetes = input("Do you have type 1 diabetes? (Y/N) ").lower()
+    # type1Diabetes = input("Do you have type 1 diabetes? (Y/N) ").lower()
     
-    if type1Diabetes == "y":
+    if type1Diabetes == "Yes":
         if age <= 24:
             covidage += 29
         elif 25 <= age <= 32:
@@ -349,9 +353,9 @@ def covidAge(age):
     else:
         covidage += 0
     
-    type2Diabetes = input("Do you have type 2 diabetes? (Y/N) ").lower()
+    # type2Diabetes = input("Do you have type 2 diabetes? (Y/N) ").lower()
     
-    if type2Diabetes == 'y':
+    if type2Diabetes == 'Yes':
         if age <= 24:
             covidage += 22
         elif 25 <= age <= 37:
@@ -385,12 +389,12 @@ def covidAge(age):
     else:
         covidage += 0
         
-    chronicKidneyDisease = input("Do you have chronic kidney disease? (Y/N) ").lower()
+    #chronicKidneyDisease = input("Do you have chronic kidney disease? (Y/N) ").lower()
     
-    if chronicKidneyDisease == 'y':
-        GFR3060 = input("Is your estimated GFR 30-60 mL/min?(Y/N) ").lower()
+    if chronicKidneyDisease == 'Yes':
+        # GFR3060 = input("Is your estimated GFR 30-60 mL/min?(Y/N) ").lower()
         # note else means that it is lower than 30 mL/min
-        if GFR3060 == 'y':
+        if GFR3060 == 'Yes':
             if age == 20:
                 covidage += 42
             elif age == 21:
@@ -586,8 +590,8 @@ def covidAge(age):
         covidage += 0
         
         
-    liverDisease = input("Do you have liver disease? (Y/N) ").lower()
-    if liverDisease == 'y':
+    # liverDisease = input("Do you have liver disease? (Y/N) ").lower()
+    if liverDisease == 'Yes':
         
         if age == 20:
             covidage += 32

@@ -39,9 +39,7 @@ def ageToProbAnalysis():
     # In literature P(ICU) is lower for elderlies since their chances of surviving in an ICU
     # is lower therefore the P(ICU) for them is lower
 
-def conversionToRisk(age):
-    
-    covidAges = covidAge(age)
+def conversionToRisk(covidAges, totalSusceptibility):
     if covidAges >= 85:
         probDeath = 0.0091882*np.exp(0.10334731*85)/1000
     else:
@@ -58,12 +56,17 @@ def conversionToRisk(age):
         probHosp = 0.009*np.exp(0.0679*85)
     else:
         probHosp = 0.009*np.exp(0.0679*covidAges)
-    print('this is your prob death', probDeath)
-    print('this is your prob hosp', probHosp)
-    print("This is your prob ICU", probICU)
-    
-    riskScore = totalSusceptibility()*(probDeath + probHosp + probICU)/0.0000015
+    # print('this is your prob death', probDeath)
+    # print('this is your prob hosp', probHosp)
+    # print("This is your prob ICU", probICU)
+    print("comm risk", totalSusceptibility)
+    riskScore = totalSusceptibility*(probDeath + probHosp + probICU)/0.0000015
+    print(riskScore)
     if riskScore >= 100:
-        return 100
-    else:
-        return riskScore
+        riskScore = 100
+    return {
+        "probDeath" : probDeath,
+        "probHosp"  : probHosp,
+        "probICU" : probICU,
+        "riskScore" : riskScore
+    }

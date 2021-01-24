@@ -1,0 +1,106 @@
+{
+    "questions" : 
+        [{
+            "title" : "How old are you?",
+            "name" : "age",
+            "default" : 0,
+            "question_type" : "input"
+        },
+        {
+            "title" : "Are you a male or female?",
+            "name" : "gender",
+            "default" : "Male",
+            "question_type" : "dropdown",
+            "choices" : ["Male", "Female"]
+        },
+        {
+            "title" : "Are you White, Asian, Black, Hispanic, or other non-White?",
+            "name" : "race",
+            "default" : "",
+            "question_type" : "dropdown",
+            "choices" : ["White", "Asian", "Black", "Hispanic","Other"]
+        },
+        {
+            "title" : "What is your Body Mass Index (rounded down)?",
+            "name" : "bmi",
+            "default" : 0,
+            "question_type" : "input"
+        },
+        {
+            "title" : "Do you have asthma?",
+            "name" : "asthma",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices" : ["No", "Yes"]
+        },
+        {
+            "title" : "Is your asthma severe?",
+            "name" : "severityAsthma",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices" : ["No", "Yes"]
+        },
+        {
+            "title" : "Do you have any other chronic respiratory diseases?",
+            "name" : "respiratoryDisease",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices" : ["No", "Yes"]
+        },
+        {
+            "title" : "Do you have hypertension?",
+            "name" : "hypertension",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices" : ["No", "Yes"]
+        },
+        {
+            "title" : "Any heart failures or other chronic heart diseases?",
+            "name" : "heartFailure",
+            "default" : "None",
+            "question_type" : "dropdown",
+            "choices" : ["None", "Heart Failure", "Other"]
+        },
+        {
+            "title" : "Do you have type 1 diabetes?",
+            "name" : "type1Diabetes",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices" : ["No", "Yes"]
+        },
+        {
+            "title" : "Do you have type 1 diabetes?",
+            "name" : "type1Diabetes",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices" : ["No", "Yes"]
+        },
+        {
+            "title" : "Do you have type 2 diabetes?",
+            "name" : "type2Diabetes",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices" : ["No", "Yes"]
+        },
+        {
+            "title" : "Do you have chronic kidney disease?",
+            "name" : "chronicKidneyDisease",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices" : ["No", "Yes"]
+        },
+        {
+            "title" : "Is your estimated GFR 30-60 mL/min?",
+            "name" : "GFR3060",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices" : ["No", "Yes"]
+        },
+        {
+            "title" : "Do you have liver disease?",
+            "name" : "liverDisease",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices" : ["No", "Yes"]
+        }]
+}

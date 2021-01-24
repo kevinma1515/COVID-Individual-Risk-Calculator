@@ -1,6 +1,8 @@
 from flask import Flask, request, abort, jsonify, make_response
 from flask_cors import cross_origin
 import ProbabilityOfCOVID 
+import covidAgeToProbability
+import CovidAGE
 import json
 import pandas as pd
 
@@ -12,7 +14,9 @@ state_county_json = {}
 symptom_prediction_model_json = {}
 
 with open('question_jsons/symptom_prediction_model.json', 'r') as f:
-    symptom_prediction_model_json = json.load(f)
+    symptom_prediction_model_questions_json = json.load(f)
+with open('question_jsons/covid_age.json', 'r') as f:
+    covid_age_questions_json = json.load(f)
 with open('state-county.json', 'r') as f:
     state_county_json = json.load(f)
 
@@ -33,7 +37,13 @@ def hello_world():
 @cross_origin()
 def symptom_prediction_model_questions():
     if request.method == 'GET':
-        return make_response(symptom_prediction_model_json, 200)
+        return make_response(symptom_prediction_model_questions_json, 200)
+
+@app.route('/covid_age_model_questions', methods=['GET'])
+@cross_origin()
+def covid_age_model_questions():
+    if request.method == 'GET':
+        return make_response(covid_age_questions_json, 200)
 
 @app.route('/state_county_list', methods=['GET'])
 @cross_origin()
@@ -87,5 +97,32 @@ def community_risk():
         return make_response(jsonify({"result" : comm_risk}), 200)
 
 
-                                
-        
+@app.route('/covid_age_result', methods=['POST'])
+@cross_origin()
+def covid_age_result():
+    if request.method == 'POST':
+        data = request.get_json()    
+        if len(str(data['age'])) == 0:
+            data['age'] = 0
+        if len(str(data['bmi'])) == 0:
+            data['bmi'] = 0
+        print(data)
+        covidAge = CovidAGE.covidAge(int(data['age']), 
+                                        data['gender'], 
+                                        data['race'],
+                                        int(data['bmi']),
+                                        data['asthma'],
+                                        data['severityAsthma'],
+                                        data['respiratoryDisease'],
+                                        data['hypertension'],
+                                        data['heartFailure'],
+                                        data['type1Diabetes'],
+                                        data['type2Diabetes'],
+                                        data['chronicKidneyDisease'],
+                                        data['GFR3060'],
+                                        data['liverDisease'])
+        print(covidAge)
+        results = covidAgeToProbability.conversionToRisk(covidAge, float(data['community_risk']))
+        print(results)
+        return make_response(jsonify(results), 200)
+
