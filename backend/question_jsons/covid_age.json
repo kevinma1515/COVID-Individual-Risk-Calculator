@@ -90,7 +90,7 @@
             "choices" : ["No", "Yes"]
         },
         {
-            "title" : "Is your estimated GFR 30-60 mL/min?",
+            "title" : "If you have chronic kidney disease, is your estimated GFR 30-60 mL/min?",
             "name" : "GFR3060",
             "default" : "No",
             "question_type" : "dropdown",
@@ -99,6 +99,34 @@
         {
             "title" : "Do you have liver disease?",
             "name" : "liverDisease",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices" : ["No", "Yes"]
+        },
+		{
+            "title" : "Do you have chronic neurlogical disease other than stroke or dementia?",
+            "name" : "chronicNeurlogical",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices" : ["No", "Yes"]
+        },
+		{
+            "title" : "Did you receive any organ transplants?",
+            "name" : "organTransplant",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices" : ["No", "Yes"]
+        },
+		{
+            "title" : "Do you have rheumatoid/pupus/psoriasis?",
+            "name" : "rheumatoid",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices" : ["No", "Yes"]
+        },
+		{
+            "title" : "Do you have other immunosuppressive condition?",
+            "name" : "immunoSuppressive",
             "default" : "No",
             "question_type" : "dropdown",
             "choices" : ["No", "Yes"]
