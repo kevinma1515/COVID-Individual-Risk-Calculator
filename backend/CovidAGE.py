@@ -9,7 +9,8 @@ Created on Sat Jan  9 18:44:34 2021
 
 
 def covidAge(age, gender, race, bmi, asthma, severityAsthma, respiratoryDisease, hypertension, heartFailure, type1Diabetes,
-            type2Diabetes, chronicKidneyDisease, GFR3060, liverDisease):
+            type2Diabetes, chronicKidneyDisease, GFR3060, liverDisease, chronicNeurlogical,
+              organTransplant, rheumatoid, immunoSuppressive):
     # need a real age inputted for it to be valid
     # all data gathered from covid-Age calculator
     
@@ -588,8 +589,6 @@ def covidAge(age, gender, race, bmi, asthma, severityAsthma, respiratoryDisease,
         
     else:
         covidage += 0
-        
-        
     # liverDisease = input("Do you have liver disease? (Y/N) ").lower()
     if liverDisease == 'Yes':
         
@@ -703,7 +702,361 @@ def covidAge(age, gender, race, bmi, asthma, severityAsthma, respiratoryDisease,
             covidage += 3
     else:
         covidage += 0
+        
+    # chronicNeurlogical= input("Do you have chronic neurlogical disease other than stroke or dementia? (Y/N) ").lower()
+    if chronicNeurlogical == 'Yes':
+        
+        if age == 20:
+            covidage += 23
+        elif age == 21:
+            covidage += 23
+        elif age == 22:
+            covidage += 22 
+        elif 23 <= age <= 24:
+            covidage += 22
+        elif age == 25:
+            covidage += 22
+        elif age == 26:
+            covidage += 22
+        elif age == 27:
+            covidage += 22
+        elif age == 28:
+            covidage += 22
+        elif age == 29:
+            covidage += 22
+        elif age == 30:
+            covidage += 22
+        elif age == 31:
+            covidage += 22
+        elif age == 32:
+            covidage += 21
+        elif age == 33:
+            covidage += 21
+        elif age == 34:
+            covidage += 21
+        elif age == 35:
+            covidage += 21
+        elif age == 36:
+            covidage += 21
+        elif age == 37:
+            covidage += 21
+        elif age == 38:
+            covidage += 21
+        elif age == 39:
+            covidage += 20
+        elif age == 40:
+            covidage += 20
+        elif age == 41:
+            covidage += 20
+        elif age == 42:
+            covidage += 20
+        elif age == 43:
+            covidage += 20
+        elif age == 44:
+            covidage += 20
+        elif age == 45:
+            covidage += 20
+        elif age == 46:
+            covidage += 19
+        elif age == 47:
+            covidage += 19
+        elif age == 48:
+            covidage += 19
+        elif age == 49:
+            covidage += 19
+        elif age == 50:
+            covidage += 18
+        elif age == 51:
+            covidage += 18
+        elif age == 52:
+            covidage += 18
+        elif age == 53:
+            covidage += 18
+        elif age == 54:
+            covidage += 17
+        elif age == 55:
+            covidage += 17
+        elif age == 56:
+            covidage += 17
+        elif age == 57:
+            covidage += 16
+        elif age == 58:
+            covidage += 16
+        elif age == 59:
+            covidage += 16
+        elif age == 60:
+            covidage += 16
+        elif age == 61:
+            covidage += 15
+        elif age == 62:
+            covidage += 15
+        elif age == 63:
+            covidage += 15
+        elif age == 64:
+            covidage += 14
+        elif age == 65:
+            covidage += 14
+        elif age == 66:
+            covidage += 14
+        elif age == 67:
+            covidage += 14
+        elif age == 68:
+            covidage += 13
+        elif age == 69:
+            covidage += 13
+        elif age == 70:
+            covidage += 13
+        elif age == 71:
+            covidage += 13
+        elif age == 72:
+            covidage += 12
+        elif age == 73:
+            covidage += 12
+        elif age >= 74:
+            covidage += 12
+    else:
+        covidage += 0
+
+
+ 
+    # organTransplant = input("Did you receive any organ transplants? (Y/N) ").lower()
+    if organTransplant == 'Yes':
+        
+        if age == 20:
+            covidage += 25
+        elif age == 21:
+            covidage += 25
+        elif age == 22:
+            covidage += 24 
+        elif 23 <= age <= 24:
+            covidage += 24
+        elif age == 25:
+            covidage += 24
+        elif age == 26:
+            covidage += 24
+        elif age == 27:
+            covidage += 24
+        elif age == 28:
+            covidage += 24
+        elif age == 29:
+            covidage += 24
+        elif age == 30:
+            covidage += 23
+        elif age == 31:
+            covidage += 23
+        elif age == 32:
+            covidage += 23
+        elif age == 33:
+            covidage += 23
+        elif age == 34:
+            covidage += 23
+        elif age == 35:
+            covidage += 23
+        elif age == 36:
+            covidage += 22
+        elif age == 37:
+            covidage += 22
+        elif age == 38:
+            covidage += 22
+        elif age == 39:
+            covidage += 22
+        elif age == 40:
+            covidage += 22
+        elif age == 41:
+            covidage += 22
+        elif age == 42:
+            covidage += 21
+        elif age == 43:
+            covidage += 21
+        elif age == 44:
+            covidage += 21
+        elif age == 45:
+            covidage += 21
+        elif age == 46:
+            covidage += 21
+        elif age == 47:
+            covidage += 20
+        elif age == 48:
+            covidage += 20
+        elif age == 49:
+            covidage += 20
+        elif age == 50:
+            covidage += 19
+        elif age == 51:
+            covidage += 19
+        elif age == 52:
+            covidage += 19
+        elif age == 53:
+            covidage += 18
+        elif age == 54:
+            covidage += 18
+        elif age == 55:
+            covidage += 18
+        elif age == 56:
+            covidage += 17
+        elif age == 57:
+            covidage += 17
+        elif age == 58:
+            covidage += 16
+        elif age == 59:
+            covidage += 16
+        elif age == 60:
+            covidage += 15
+        elif age == 61:
+            covidage += 15
+        elif age == 62:
+            covidage += 14
+        elif age == 63:
+            covidage += 14
+        elif age == 64:
+            covidage +=13
+        elif age == 65:
+            covidage += 13
+        elif age == 66:
+            covidage += 12
+        elif age == 67:
+            covidage += 12
+        elif age == 68:
+            covidage += 11
+        elif age == 69:
+            covidage += 11
+        elif age == 70:
+            covidage += 10
+        elif age == 71:
+            covidage += 10
+        elif age == 72:
+            covidage += 9
+        elif age == 73:
+            covidage += 9
+        elif age >= 74:
+            covidage += 8
+    else:
+        covidage += 0
+        
+    # input("Do you have rheumatoid/pupus/psoriasis?")
+    if rheumatoid == 'Yes':
+        covidage += 2
+    else:
+        covidage += 0
+        
+     # input("Do you have other immunosuppressive condition (Y/N) ").lower()
+    if immunoSuppressive == 'Yes':
+        
+        if age == 20:
+            covidage += 30
+        elif age == 21:
+            covidage += 30
+        elif age == 22:
+            covidage += 29 
+        elif age == 23:
+            covidage += 29
+        elif age == 24:
+            covidage += 28
+        elif age == 25:
+            covidage += 28
+        elif age == 26:
+            covidage += 27
+        elif age == 27:
+            covidage += 27
+        elif age == 28:
+            covidage += 26
+        elif age == 29:
+            covidage += 26
+        elif age == 30:
+            covidage += 25
+        elif age == 31:
+            covidage += 25
+        elif age == 32:
+            covidage += 24
+        elif age == 33:
+            covidage += 24
+        elif age == 34:
+            covidage += 23
+        elif age == 35:
+            covidage += 23
+        elif age == 36:
+            covidage += 22
+        elif age == 37:
+            covidage += 22
+        elif age == 38:
+            covidage += 21
+        elif age == 39:
+            covidage += 21
+        elif age == 40:
+            covidage += 20
+        elif age == 41:
+            covidage += 20
+        elif age == 42:
+            covidage += 19
+        elif age == 43:
+            covidage += 19
+        elif age == 44:
+            covidage += 18
+        elif age == 45:
+            covidage += 17
+        elif age == 46:
+            covidage += 17
+        elif age == 47:
+            covidage += 16
+        elif age == 48:
+            covidage += 16
+        elif age == 49:
+            covidage += 15
+        elif age == 50:
+            covidage += 15
+        elif age == 51:
+            covidage += 15
+        elif age == 52:
+            covidage += 14
+        elif age == 53:
+            covidage += 14
+        elif age == 54:
+            covidage += 13
+        elif age == 55:
+            covidage += 13
+        elif age == 56:
+            covidage += 13
+        elif age == 57:
+            covidage += 12
+        elif age == 58:
+            covidage += 12
+        elif age == 59:
+            covidage += 11
+        elif age == 60:
+            covidage += 11
+        elif age == 61:
+            covidage += 11
+        elif age == 62:
+            covidage += 10
+        elif age == 63:
+            covidage += 10
+        elif age == 64:
+            covidage +=9
+        elif age == 65:
+            covidage += 9
+        elif age == 66:
+            covidage += 9
+        elif age == 67:
+            covidage += 8
+        elif age == 68:
+            covidage += 8
+        elif age == 69:
+            covidage += 7
+        elif age == 70:
+            covidage += 7
+        elif age == 71:
+            covidage += 7
+        elif age == 72:
+            covidage += 6
+        elif age == 73:
+            covidage += 6
+        elif age >= 74:
+            covidage += 5
+    else:
+        covidage += 0
+
+
+
     
-        
-        
     return covidage
+
