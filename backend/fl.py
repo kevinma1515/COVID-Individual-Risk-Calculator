@@ -120,7 +120,11 @@ def covid_age_result():
                                         data['type2Diabetes'],
                                         data['chronicKidneyDisease'],
                                         data['GFR3060'],
-                                        data['liverDisease'])
+                                        data['liverDisease'],
+                                        data['chronicNeurlogical'],
+                                        data['organTransplant'],
+                                        data['rheumatoid'],
+                                        data['immunoSuppressive'])
         print(covidAge)
         results = covidAgeToProbability.conversionToRisk(covidAge, float(data['community_risk']))
         print(results)
