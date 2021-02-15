@@ -10,6 +10,7 @@ Link here https://github.com/nytimes/covid-19-data
 ## Team
 - Kevin Ma - *team lead / data scientist*
 - Timothy Gan - *full-stack developer*
+- Bishal Thapa - **
 - Anaya Mehta - **
 - Daniel Ajisafe - **
 
