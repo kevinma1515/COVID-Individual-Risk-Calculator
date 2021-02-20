@@ -11,8 +11,9 @@ Link here https://github.com/nytimes/covid-19-data
 - Kevin Ma - *team lead / data scientist*
 - Timothy Gan - *full-stack developer*
 - Bishal Thapa - *back-end developer*
+- Daniel Ajisafe - *front-end developer*
 - Anaya Mehta - **
-- Daniel Ajisafe - **
+
 
 ## Advisor
 - Dr. Michael Lachmann - *Professor at Santa Fe Institute*
