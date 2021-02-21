@@ -107,8 +107,8 @@ def covid_age_result():
         if len(str(data['bmi'])) == 0:
             data['bmi'] = 0
         print(data)
-        covidAge = CovidAGE.covidAge(int(data['age']),
-                                        data['gender'],
+        covidAge = CovidAGE.covidAge(int(data['age']), 
+                                        data['gender'], 
                                         data['race'],
                                         int(data['bmi']),
                                         data['asthma'],
@@ -119,12 +119,15 @@ def covid_age_result():
                                         data['type1Diabetes'],
                                         data['type2Diabetes'],
                                         data['chronicKidneyDisease'],
-                                        data['GFR3060'],
                                         data['liverDisease'],
                                         data['chronicNeurlogical'],
                                         data['organTransplant'],
                                         data['rheumatoid'],
-                                        data['immunoSuppressive'])
+                                        data['immunoSuppressive'],
+                                        data['spleenDisease'],
+                                        data['nonHematologicalCancer'],
+                                        data['hematologicalCancer'],
+                                        data['cerebroVascularDisease'])
         print(covidAge)
         results = covidAgeToProbability.conversionToRisk(covidAge, float(data['community_risk']))
         print(results)
