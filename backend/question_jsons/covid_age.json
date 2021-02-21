@@ -1,5 +1,5 @@
 {
-    "questions" :
+    "questions" : 
         [{
             "title" : "How old are you?",
             "name" : "age",
@@ -69,13 +69,6 @@
             "choices" : ["No", "Yes"]
         },
         {
-            "title" : "Do you have type 1 diabetes?",
-            "name" : "type1Diabetes",
-            "default" : "No",
-            "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
-        },
-        {
             "title" : "Do you have type 2 diabetes?",
             "name" : "type2Diabetes",
             "default" : "No",
@@ -87,14 +80,7 @@
             "name" : "chronicKidneyDisease",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
-        },
-        {
-            "title" : "If you have chronic kidney disease, is your estimated GFR 30-60 mL/min?",
-            "name" : "GFR3060",
-            "default" : "No",
-            "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
+            "choices" : ["No", "Estimated GFR 30-60 mL/min", "Estimated GFR less than 30 mL/min (includes patients on dialysis"]
         },
         {
             "title" : "Do you have liver disease?",
@@ -127,6 +113,34 @@
 		{
             "title" : "Do you have other immunosuppressive condition?",
             "name" : "immunoSuppressive",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices" : ["No", "Yes"]
+        },
+		{
+            "title" : "Do you have spleen disease?",
+            "name" : "spleenDisease",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices" : ["No", "Yes"]
+        },
+		{
+            "title" : "Do you have cancer other than leukaemia, lymphoma or myeloma?",
+            "name" : "nonHematologicalCancer",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices" : ["No", "Diagnosed less than 1 year ago", "Diagnosed 1-4.9 years ago", "Diagnosed greater than or equal to 5 years ago"]
+        },
+		{
+            "title" : "Do you have leukaemia, lymphoma or myeloma?",
+            "name" : "hematologicalCancer",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices" : ["No", "Diagnosed less than 1 year ago", "Diagnosed 1-4.9 years ago", "Diagnosed greater than or equal to 5 years ago"]
+        },
+		{
+            "title" : "Do you have cerebrovascular disease?",
+            "name" : "cerebroVascularDisease",
             "default" : "No",
             "question_type" : "dropdown",
             "choices" : ["No", "Yes"]
