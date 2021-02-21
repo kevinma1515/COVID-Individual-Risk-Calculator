@@ -10,6 +10,7 @@ The symptomatic risk was calculated using a logistic regression based off of sym
 
 The health risk was integrated into our calculator from a paper posted by ALAMA.         
 Link here https://alama.org.uk/covid-19-medical-risk-assessment/
+Conversion from COVID age to probability of death, ICU, and hospitalization were converted using an exponential distribution based off of different studies on how age can affect your chances of dying, going into the ICU and getting hospitalized.
 
 The community risk was calculated by using the us-counties.csv file retrieved from the NYTimes COVID-19 github. File is updated on a weekly basis.
 
