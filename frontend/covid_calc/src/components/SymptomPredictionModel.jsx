@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
-import {DropdownButton, Dropdown, Tab, Tabs, Form, Container} from 'react-bootstrap';
 import DropdownQuestion from './DropdownQuestion';
 import Input from './Input';
 
 
-class COVID_Age extends Component{
+class SymptomPredictionModel extends Component{
     constructor(props){
         super(props);
         this.state = {
             isLoading : true,
             questionList: false,
             values: {},
-            covidRisk: {}
+            covidRisk: 0.0
         };
-        
-        fetch("http://localhost:5000/covid_age_model_questions")
+
+        fetch("http://localhost:5000/symptom_prediction_model_questions")
         .then(
             (response) => {
                 return response.json();
@@ -27,7 +26,7 @@ class COVID_Age extends Component{
                 let defaultValues = {}
                 data.questions.map((question) =>{
                     defaultValues[question.name] = question.default;
-                    
+                    console.log(defaultValues)
                 })
                 this.setState({values : defaultValues})
                 return {}
@@ -41,7 +40,7 @@ class COVID_Age extends Component{
         .catch(console.log);
     }
 
-    
+
     updateValue(key, value){
         let tempValues = this.state.values;
         tempValues[key] = value;
@@ -50,19 +49,13 @@ class COVID_Age extends Component{
     }
 
     calculate(){
-        var covidAgeParams = this.state.values
-
-        covidAgeParams['community_risk'] = this.props.communityRisk
-        
-            
-        console.log(covidAgeParams)
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(covidAgeParams)
+            body: JSON.stringify(this.state.values)
         }
-        
-        fetch("http://localhost:5000/covid_age_result", requestOptions)
+
+        fetch("http://localhost:5000/symptom_prediction_model_result", requestOptions)
         .then(
             (response) => {
                 return response.json();
@@ -70,15 +63,14 @@ class COVID_Age extends Component{
         )
         .then(
             (data) => {
-                this.setState({covidRisk : data})
-                
-                this.props.updateInfo(data)
+                this.setState({covidRisk : data.result})
+                this.props.updateCovidValue(this.state.covidRisk)
             }
         )
         .catch(console.log)
     }
-    
-  
+
+
 
     render(){
 
@@ -94,15 +86,15 @@ class COVID_Age extends Component{
         return (
             <div>
                 <h2>
-                    COVID Age
+                    SymptomPredictionModel
                 </h2>
                 {this.state.questionList.map(
                     (question, i) => {
                         if(question.question_type === 'dropdown'){
                             return (
                                 <DropdownQuestion   key={i}
-                                                    updateValue={this.updateValue.bind(this)} 
-                                                    title={question.title} 
+                                                    updateValue={this.updateValue.bind(this)}
+                                                    title={question.title}
                                                     choices={question.choices}
                                                     name={question.name}/>
                             )
@@ -123,4 +115,4 @@ class COVID_Age extends Component{
 
 }
 
-export default COVID_Age;
+export default SymptomPredictionModel;

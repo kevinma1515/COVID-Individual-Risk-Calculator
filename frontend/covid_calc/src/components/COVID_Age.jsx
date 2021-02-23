@@ -4,17 +4,17 @@ import DropdownQuestion from './DropdownQuestion';
 import Input from './Input';
 
 
-class SymptomPredictionModel extends Component{
+class COVID_Age extends Component{
     constructor(props){
         super(props);
         this.state = {
             isLoading : true,
             questionList: false,
             values: {},
-            covidRisk: 0.0
+            covidRisk: {}
         };
-        
-        fetch("http://localhost:5000/symptom_prediction_model_questions")
+
+        fetch("http://localhost:5000/covid_age_model_questions")
         .then(
             (response) => {
                 return response.json();
@@ -27,7 +27,7 @@ class SymptomPredictionModel extends Component{
                 let defaultValues = {}
                 data.questions.map((question) =>{
                     defaultValues[question.name] = question.default;
-                    console.log(defaultValues)
+
                 })
                 this.setState({values : defaultValues})
                 return {}
@@ -41,7 +41,7 @@ class SymptomPredictionModel extends Component{
         .catch(console.log);
     }
 
-    
+
     updateValue(key, value){
         let tempValues = this.state.values;
         tempValues[key] = value;
@@ -50,13 +50,19 @@ class SymptomPredictionModel extends Component{
     }
 
     calculate(){
+        var covidAgeParams = this.state.values
+
+        covidAgeParams['community_risk'] = this.props.communityRisk
+
+
+        console.log(covidAgeParams)
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(this.state.values)
+            body: JSON.stringify(covidAgeParams)
         }
-        
-        fetch("http://localhost:5000/symptom_prediction_model_result", requestOptions)
+
+        fetch("http://localhost:5000/covid_age_result", requestOptions)
         .then(
             (response) => {
                 return response.json();
@@ -64,14 +70,15 @@ class SymptomPredictionModel extends Component{
         )
         .then(
             (data) => {
-                this.setState({covidRisk : data.result})
-                this.props.updateCovidValue(this.state.covidRisk)
+                this.setState({covidRisk : data})
+
+                this.props.updateInfo(data)
             }
         )
         .catch(console.log)
     }
-    
-  
+
+
 
     render(){
 
@@ -83,19 +90,18 @@ class SymptomPredictionModel extends Component{
             )
         }
 
-
         return (
             <div>
                 <h2>
-                    SymptomPredictionModel
+                    COVID Age
                 </h2>
                 {this.state.questionList.map(
                     (question, i) => {
                         if(question.question_type === 'dropdown'){
                             return (
                                 <DropdownQuestion   key={i}
-                                                    updateValue={this.updateValue.bind(this)} 
-                                                    title={question.title} 
+                                                    updateValue={this.updateValue.bind(this)}
+                                                    title={question.title}
                                                     choices={question.choices}
                                                     name={question.name}/>
                             )
@@ -116,4 +122,4 @@ class SymptomPredictionModel extends Component{
 
 }
 
-export default SymptomPredictionModel;
+export default COVID_Age;

@@ -14,7 +14,7 @@ class CommunityRisk extends Component{
             currentCounty : "Autauga",
             communityRisk : 0.0
         };
-        
+
         fetch("http://localhost:5000/state_county_list")
         .then(
             (response) => {
@@ -35,10 +35,7 @@ class CommunityRisk extends Component{
         .catch(console.log);
     }
 
-
-
-    
-    updateState(key, value){        
+    updateState(key, value){
         this.setState({currentState: value, currentCounty: this.state.data[value][0]})
         this.props.updateCovidValue(0)
     }
@@ -71,11 +68,9 @@ class CommunityRisk extends Component{
         )
         .catch(console.log)
     }
-    
-  
 
     render(){
-        
+
         if(this.state.isLoading === true){
             return(
                 <h3>
@@ -83,17 +78,14 @@ class CommunityRisk extends Component{
                 </h3>
             )
         }
-
-
         return (
             <div>
-                
-                <DropdownQuestion updateValue=  {this.updateState.bind(this)} 
-                                        title="Choose your state." 
+                <DropdownQuestion updateValue=  {this.updateState.bind(this)}
+                                        title="Choose your state."
                                         choices={this.state.data["states"]}
                                         name="state"/>
-                <DropdownQuestion updateValue=  {this.updateCounty.bind(this)} 
-                                        title="Choose your county." 
+                <DropdownQuestion updateValue=  {this.updateCounty.bind(this)}
+                                        title="Choose your county."
                                         choices={this.state.data[this.state.currentState]}
                                         name="county"
                                         start_value={this.state.data[this.state.currentState][0]}/>

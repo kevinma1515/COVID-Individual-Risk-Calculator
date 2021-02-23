@@ -1,35 +1,23 @@
 import React, { Component } from 'react';
 import {Row, Col, Tab, Tabs, Form} from 'react-bootstrap';
 
-
 class MultipleChoice extends Component{
     constructor(props){
         super(props);
         this.state = {
-            
+
         };
     }
 
-    
-    componentDidMount(){
-        
-
-    }
-
-    
-
-  
+    componentDidMount(){}
 
     render(){
-
-     
         return (
             <fieldset>
                 <Form.Group >
                 <Form.Label column sm={2}>
                     {this.props.name}
                 </Form.Label>
-                    
                         {this.props.choices.map((choice, id) =>
                             {
                                 return(
@@ -44,12 +32,9 @@ class MultipleChoice extends Component{
                                 )
                             })
                         }
-                   
                 </Form.Group>
             </fieldset>
         )
-        
-
     }
 }
 

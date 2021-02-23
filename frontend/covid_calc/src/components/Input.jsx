@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Row, Col, Tab, Tabs, Form} from 'react-bootstrap';
 
-
 class Input extends Component{
     constructor(props){
         super(props);
@@ -11,11 +10,7 @@ class Input extends Component{
         };
     }
 
-    
-    componentDidMount(){
-       
-
-    }
+    componentDidMount(){}
 
     change(event){
         this.props.updateValue(this.state.name, event.target.value);
@@ -25,12 +20,9 @@ class Input extends Component{
         if (event.which === 13 /* Enter */) {
           event.preventDefault();
         }
-       
     }
 
     render(){
-        
-     
         return (
             <div style={{fontSize: "8pt"}}>
                 <Form>
@@ -40,10 +32,7 @@ class Input extends Component{
                     </Form.Group>
                 </Form>
             </div>
-                
         )
-        
-
     }
 }
 
