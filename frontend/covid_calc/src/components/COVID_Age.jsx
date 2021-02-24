@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {DropdownButton, Dropdown, Tab, Tabs, Form, Container} from 'react-bootstrap';
 import DropdownQuestion from './DropdownQuestion';
 import Input from './Input';
 

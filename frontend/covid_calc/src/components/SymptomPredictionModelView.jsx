@@ -15,7 +15,7 @@ class SymptomPredictionModelView extends Component{
         return (
             <Container className="symptomPredView">
                 <Row>
-                    <Col style={{margin: "auto", maxWidth : "45vw"}}>
+                    <Col style={{margin: "auto", maxWidth : "75vw"}}>
                         <SymptomPredictionModel updateCovidValue={this.props.symptom}/>
                         <CommunityRisk updateCovidValue={this.props.community}/>
                     </Col>

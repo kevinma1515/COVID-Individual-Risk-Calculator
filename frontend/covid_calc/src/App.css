@@ -69,3 +69,9 @@
   overflow-y: auto;
   height: 20vh;
 }
+
+.form-g {
+  background-color: rgba(256, 256, 256, .5);
+  margin-bottom: 2%;
+  padding: 3%;
+}

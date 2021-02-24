@@ -21,12 +21,10 @@ class SymptomPredictionModel extends Component{
         )
         .then(
             (data) => {
-                console.log(data);
                 this.setState({questionList : data.questions});
                 let defaultValues = {}
                 data.questions.map((question) =>{
                     defaultValues[question.name] = question.default;
-                    console.log(defaultValues)
                 })
                 this.setState({values : defaultValues})
                 return {}
@@ -85,9 +83,9 @@ class SymptomPredictionModel extends Component{
 
         return (
             <div>
-                <h2>
-                    SymptomPredictionModel
-                </h2>
+                <h1>
+                    Individual COVID Risk Calculator
+                </h1>
                 {this.state.questionList.map(
                     (question, i) => {
                         if(question.question_type === 'dropdown'){
@@ -104,7 +102,8 @@ class SymptomPredictionModel extends Component{
                                 <Input              key={i}
                                                     title={question.title}
                                                     updateValue={this.updateValue.bind(this)}
-                                                    name={question.name}/>
+                                                    name={question.name}
+                                />
                             )
                         }
                     }

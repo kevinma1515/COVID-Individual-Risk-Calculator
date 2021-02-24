@@ -28,7 +28,6 @@ class COVID_AGE_VIEW extends Component{
     }
 
     render(){
-        console.log(this.props.communityRisk)
         return (
             <Container className="symptomPredView">
                 <Row>

@@ -1,0 +1,18 @@
+{
+    "questions" : 
+        [{
+            "title" : "Do you wear mask?",
+            "name" : "wearMask",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices": ["No", "Yes"]
+        },
+        {
+            "title" : "Do you social distance?",
+            "name" : "socialDistance",
+            "default" : "No",
+            "question_type" : "dropdown",
+            "choices": ["No", "Yes"]
+        }
+    ]
+}

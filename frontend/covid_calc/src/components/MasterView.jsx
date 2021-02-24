@@ -64,9 +64,8 @@ class MasterView extends Component{
     }
 
     render() {
-        console.log(this.state.symptomRisk)
         return (
-            <Container style={{marginTop: "24%"}}>
+            <Container className="form-g" style={{marginTop: "24%"}}>
                 <nav className="navbar navbar-light bg-dark fixed-top">
                     <Row style={{width: "100%"}}>
                         <div className="symptomRiskNumber" style={{color : ["hsl(",this.state.symptomColor,",100%,50%)"].join("")}}>
@@ -105,7 +104,7 @@ class MasterView extends Component{
                     <SymptomPredictionModelView style={{textAlign: "center"}} symptom={this.updateSymptom.bind(this)} community={this.updateCommunity.bind(this)}/>
                 </Col>
                 <Col>
-                    <COVID_AGE_VIEW info={this.updateInfo.bind(this)}  communityRisk={this.state.communityRisk}/>
+                    <COVID_AGE_VIEW info={this.updateInfo.bind(this)} communityRisk={this.state.communityRisk}/>
                 </Col>
             </Container>
         )}
