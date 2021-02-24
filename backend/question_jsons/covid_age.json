@@ -1,5 +1,5 @@
 {
-    "questions" : 
+    "questions" :
         [{
             "title" : "How old are you?",
             "name" : "age",
@@ -11,14 +11,14 @@
             "name" : "gender",
             "default" : "Male",
             "question_type" : "dropdown",
-            "choices" : ["Male", "Female"]
+            "choices" : ["Please Select", "Male", "Female"]
         },
         {
             "title" : "Are you White, Asian, Black, Hispanic, or other non-White?",
             "name" : "race",
             "default" : "White",
             "question_type" : "dropdown",
-            "choices" : ["White", "Asian", "Black", "Hispanic","Other"]
+            "choices" : ["Please Select", "White", "Asian", "Black", "Hispanic","Other"]
         },
         {
             "title" : "What is your Body Mass Index (rounded down)?",
@@ -31,118 +31,118 @@
             "name" : "asthma",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
+            "choices" : ["Please Select", "No", "Yes"]
         },
         {
             "title" : "Is your asthma severe?",
             "name" : "severityAsthma",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
+            "choices" : ["Please Select", "No", "Yes"]
         },
         {
             "title" : "Do you have any other chronic respiratory diseases?",
             "name" : "respiratoryDisease",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
+            "choices" : ["Please Select", "No", "Yes"]
         },
         {
             "title" : "Do you have hypertension?",
             "name" : "hypertension",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
+            "choices" : ["Please Select", "No", "Yes"]
         },
         {
             "title" : "Any heart failures or other chronic heart diseases?",
             "name" : "heartFailure",
             "default" : "None",
             "question_type" : "dropdown",
-            "choices" : ["None", "Heart Failure", "Other"]
+            "choices" : ["Please Select", "None", "Heart Failure", "Other"]
         },
         {
             "title" : "Do you have type 1 diabetes?",
             "name" : "type1Diabetes",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
+            "choices" : ["Please Select", "No", "Yes"]
         },
         {
             "title" : "Do you have type 2 diabetes?",
             "name" : "type2Diabetes",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
+            "choices" : ["Please Select", "No", "Yes"]
         },
         {
             "title" : "Do you have chronic kidney disease?",
             "name" : "chronicKidneyDisease",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Estimated GFR 30-60 mL/min", "Estimated GFR less than 30 mL/min (includes patients on dialysis"]
+            "choices" : ["Please Select", "No", "Estimated GFR 30-60 mL/min", "Estimated GFR less than 30 mL/min (includes patients on dialysis"]
         },
         {
             "title" : "Do you have liver disease?",
             "name" : "liverDisease",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
+            "choices" : ["Please Select", "No", "Yes"]
         },
 		{
             "title" : "Do you have chronic neurlogical disease other than stroke or dementia?",
             "name" : "chronicNeurlogical",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
+            "choices" : ["Please Select", "No", "Yes"]
         },
 		{
             "title" : "Did you receive any organ transplants?",
             "name" : "organTransplant",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
+            "choices" : ["Please Select", "No", "Yes"]
         },
 		{
             "title" : "Do you have rheumatoid/pupus/psoriasis?",
             "name" : "rheumatoid",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
+            "choices" : ["Please Select", "No", "Yes"]
         },
 		{
             "title" : "Do you have other immunosuppressive condition?",
             "name" : "immunoSuppressive",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
+            "choices" : ["Please Select", "No", "Yes"]
         },
 		{
             "title" : "Do you have spleen disease?",
             "name" : "spleenDisease",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
+            "choices" : ["Please Select", "No", "Yes"]
         },
 		{
             "title" : "Do you have cancer other than leukaemia, lymphoma or myeloma?",
             "name" : "nonHematologicalCancer",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Diagnosed less than 1 year ago", "Diagnosed 1-4.9 years ago", "Diagnosed greater than or equal to 5 years ago"]
+            "choices" : ["Please Select", "No", "Diagnosed less than 1 year ago", "Diagnosed 1-4.9 years ago", "Diagnosed greater than or equal to 5 years ago"]
         },
 		{
             "title" : "Do you have leukaemia, lymphoma or myeloma?",
             "name" : "hematologicalCancer",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Diagnosed less than 1 year ago", "Diagnosed 1-4.9 years ago", "Diagnosed greater than or equal to 5 years ago"]
+            "choices" : ["Please Select", "No", "Diagnosed less than 1 year ago", "Diagnosed 1-4.9 years ago", "Diagnosed greater than or equal to 5 years ago"]
         },
 		{
             "title" : "Do you have cerebrovascular disease?",
             "name" : "cerebroVascularDisease",
-            "default" : "No",
+            "default" : "Please Select",
             "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
+            "choices" : ["Please Select", "No", "Yes"]
         }]
 }

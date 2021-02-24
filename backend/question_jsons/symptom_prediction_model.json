@@ -1,5 +1,5 @@
 {
-    "questions" : 
+    "questions" :
         [{
             "title" : "How old are you?",
             "name" : "age",
@@ -11,34 +11,34 @@
             "name" : "sex",
             "default" : "Male",
             "question_type" : "dropdown",
-            "choices" : ["Male", "Female"]
+            "choices" : ["Please Select", "Male", "Female"]
         },
         {
             "title" : "Did you experience any loss of smell and taste?",
             "name" : "smellTasteSymptom",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
+            "choices" : ["Please Select", "No", "Yes"]
         },
         {
             "title" : "Do you have severe or significant persistant coughs?",
             "name" : "coughSymptoms",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
+            "choices" : ["Please Select", "No", "Yes"]
         },
         {
             "title" : "Are you experiencing severe fatigue?",
             "name" : "severeFatigues",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
+            "choices" : ["Please Select", "No", "Yes"]
         },
         {
             "title" : "Have you skipped any meals recently?",
             "name" : "skippedMeal",
             "default" : "No",
             "question_type" : "dropdown",
-            "choices" : ["No", "Yes"]
+            "choices" : ["Please Select", "No", "Yes"]
         }]
 }
