@@ -50,8 +50,8 @@ class MasterView extends Component{
         this.setState({ totalRisk: (this.state.symptomRisk * this.state.communityRisk / 10000).toFixed(3),
                         totalRiskColor : ((1-(this.state.symptomRisk * this.state.communityRisk / 10000))*120).toString(10)},
                         () => {
-                            console.log(this.state.symptomRisk * this.state.communityRisk/10000)
-                            this.communityRisk(this.state.symptomRisk * this.state.communityRisk/10000)
+                            console.log(this.state.communityRisk/100)
+                            this.communityRisk(this.state.communityRisk/100)
                         })
 
     }
