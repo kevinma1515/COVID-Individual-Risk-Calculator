@@ -1,19 +1,6 @@
 {
     "questions" :
         [{
-            "title" : "How old are you?",
-            "name" : "age",
-            "default" : 0,
-            "question_type" : "input"
-        },
-        {
-            "title" : "Are you a male or female?",
-            "name" : "gender",
-            "default" : "Male",
-            "question_type" : "dropdown",
-            "choices" : ["Please Select", "Male", "Female"]
-        },
-        {
             "title" : "Are you White, Asian, Black, Hispanic, or other non-White?",
             "name" : "race",
             "default" : "White",
