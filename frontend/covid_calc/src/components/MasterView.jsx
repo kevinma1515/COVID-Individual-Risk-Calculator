@@ -38,7 +38,7 @@ class MasterView extends Component{
     }
 
     updateCommunity(risk){
-        console.log(risk)
+        console.log("Community " + risk)
         this.setState({communityRisk: (risk * 100).toFixed(2), communityColor : ((1-risk)*120).toString(10)}, () => {
             this.updateTotalRisk()
             console.log(this.state.communityColor)
@@ -96,7 +96,7 @@ class MasterView extends Component{
                         </div>
                         <div className="riskNumber" >
                             Risk Score <br/>
-                            {this.state.score}
+                            {this.state.score} / 100
                         </div>
                     </Row>
                 </nav>
