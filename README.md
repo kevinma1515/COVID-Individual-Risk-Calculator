@@ -20,6 +20,7 @@ The community risk was calculated by using the us-counties.csv file retrieved fr
 - Timothy Gan - *full-stack developer*
 - Bishal Thapa - *back-end developer*
 - Daniel Ajisafe - *front-end developer*
+- Anaya Mehta - *front-end developer*
 
 
 
