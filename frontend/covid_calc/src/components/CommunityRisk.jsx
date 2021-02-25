@@ -38,11 +38,26 @@ class CommunityRisk extends Component{
     updateState(key, value){
         this.setState({currentState: value, currentCounty: this.state.data[value][0]})
         this.props.updateCovidValue(0)
+        console.log(this.state);    
     }
 
     updateCounty(key, value){
-        this.setState({currentCounty : value})
-        this.calculate()
+        console.log(this.state.currentCounty)
+        //this.setState({currentCounty : value})
+        console.log(value)
+        // this.setState(function(state, props) {
+        //     return {
+        //       currentCounty: value
+        //     };
+        // });
+        this.setState(
+            {currentCounty: value}, 
+            function () {
+                this.calculate()
+            }
+        )
+        // this.calculate()
+        console.log(this.state.currentCounty);
     }
 
     calculate(){
