@@ -3,7 +3,7 @@ run-frontend:
 		npm run start
 
 run-backend:
-	-@export FLASK_ENV=development
-	-@set FLASK_ENV=development
+	-@export FLASK_ENV=app.py
+	-@set FLASK_ENV=app.py
 	cd backend && \
 		flask run
