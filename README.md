@@ -16,7 +16,7 @@ The community risk was calculated by using the us-counties.csv file retrieved fr
 
 # Contributors
 ## Team
-- Kevin Ma - *team lead / data scientist*
+- Kevin Ma - *team lead*
 - Timothy Gan - *full-stack developer*
 - Bishal Thapa - *back-end developer*
 - Daniel Ajisafe - *front-end developer/UI designer*
